@@ -1,0 +1,21 @@
+﻿@page
+@model Home_Work_1.Pages.Task_5Model
+@{
+    ViewData["Title"] = "Task 5";
+}
+
+<div>
+    Задание 5
+    Создайте и запустите базовое приложение ASP.NET
+    Core, построенное на основании ASP.NET Razor Pages. Добавьте новую страницу в базовый каркас. На этой странице
+    нужно выводить случайную цитату и автора этой цитаты.
+</div>
+<br/>
+<br/>
+<p>
+    <h1>Цитата</h1>
+    <h3>Автор: @Model.Author</h3>
+    <p>
+        <div style="font-size: 25px">Цитата: @Model.Citation</div>
+    </p>
+</p>
