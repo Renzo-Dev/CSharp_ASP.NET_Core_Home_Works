@@ -7,6 +7,7 @@ namespace Home_Work_1.Pages
     {
         public string Author { get; set; }
         public string Citation { get; set; }
+
         struct Citations
         {
             public string Author;

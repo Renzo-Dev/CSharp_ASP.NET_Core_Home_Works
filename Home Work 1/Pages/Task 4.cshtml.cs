@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 
@@ -9,10 +8,11 @@ namespace Home_Work_1.Pages
         // requires using Microsoft.Extensions.Configuration;
         private readonly IConfiguration Configuration;
 
-        // public IndexModel(IConfiguration configuration)
-        // {
-        //     Configuration = configuration;
-        // }
+        // ВОТ ТУТ НЕ РАБОТАЕТ , ПИШЕТ ЧТО "Метод должен возвращать значение"
+        public IndexModel(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public string MyName { get; set; }
         public string MyTitle { get; set; }
@@ -20,13 +20,13 @@ namespace Home_Work_1.Pages
 
         public void OnGet()
         {
-            // var name = Configuration["Position:Name"];
-            // var title = Configuration["Position:Title"];
-            // var age = Configuration["Position:Age"];
-            //
-            // MyName = $"My Name: {name}";
-            // MyTitle = $"Title: {title}";
-            // MyAge = $"My YO: {age}";
+            var name = Configuration["Position:Name"];
+            var title = Configuration["Position:Title"];
+            var age = Configuration["Position:Age"];
+            
+            MyName = $"My Name: {name}";
+            MyTitle = $"Title: {title}";
+            MyAge = $"My YO: {age}";
         }
     }
 }
