@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
 </div>
 <script>
     window.addEventListener('load',()=> {
-        fetch("/GetDayOfYear", {
+        fetch("/GetRandomSymbol", {
             method: "GET",
             headers: {
                 "active": "application/json",
@@ -32,7 +32,7 @@
                 body: JSON.stringify({key: 'value'})
             }
         }).then(response => response.json()).then(data => {
-            document.getElementById('text').innerHTML = "Текущий день в году: " + data;
+            document.getElementById('text').innerHTML = "Случайный символ: " + data;
         })
     });
 </script>

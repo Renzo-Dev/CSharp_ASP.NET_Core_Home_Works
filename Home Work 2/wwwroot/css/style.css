@@ -37,6 +37,14 @@ body,html {
     margin: 20px 0;
 }
 
+#text {
+    margin-top: 150px;
+    margin-left: 200px;
+    font-size: 30px;
+    color: white;
+    font-family: "Segoe UI", serif;
+}
+
 .main__content > span {
     color: white;
     font-family: "Segoe UI", serif;

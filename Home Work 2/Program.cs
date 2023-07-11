@@ -13,12 +13,19 @@ app.Run(async (ctx) =>
 {
     var path = Uri.UnescapeDataString(ctx.Request.Path);
     Console.WriteLine(path);
-    if (path == "/dayOfYear")
+
+    if (path == "/GetRandomSymbol")
     {
-        // var data = new { DateTime.Now.DayOfYear };
-        // string json = System.Text.Json.JsonSerializer.Serialize(data);
+        char randomChar = (char)new Random().Next('a', 'z' + 1);
+        ctx.Response.Headers.ContentType = "application/json; charset=utf-8";
+        await ctx.Response.WriteAsJsonAsync(randomChar);
     }
-    if (path == "/css/style.css")
+    else if (path == "/GetDayOfYear")
+    {
+        ctx.Response.Headers.ContentType = "application/json; charset=utf-8";
+        await ctx.Response.WriteAsJsonAsync(DateTime.Now.DayOfYear);
+    }
+    else if (path == "/css/style.css")
     {
         ctx.Response.ContentType = "text/css";
         await ctx.Response.SendFileAsync("wwwroot/css/styles.css");
@@ -31,22 +38,22 @@ app.Run(async (ctx) =>
     else if (path == "/Task2")
     {
         ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task1.html");
+        await ctx.Response.SendFileAsync("Pages/Task2.html");
     }
     else if (path == "/Task3")
     {
         ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task1.html");
+        await ctx.Response.SendFileAsync("Pages/Task3.html");
     }
     else if (path == "/Task4")
     {
         ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task1.html");
+        await ctx.Response.SendFileAsync("Pages/Task4.html");
     }
     else if (path == "/Task5")
     {
         ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task1.html");
+        await ctx.Response.SendFileAsync("Pages/Task5.html");
     }
     else
     {
