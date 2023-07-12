@@ -17,12 +17,64 @@ body,html {
 }
 
 .topBar a {
+    margin-top: 30px;
     text-decoration: none;
     font-family: "Segoe UI", serif;
     font-weight: 500;
     font-size: 27px;
     margin-right: 70px;
     color: white;
+}
+
+#text {
+    margin-top: 150px;
+    margin-left: 200px;
+    font-size: 30px;
+    color: white;
+    font-family: "Segoe UI", serif;
+}
+
+.restaurant__container {
+    display: flex;
+    width: 1200px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: #4f1dcc;
+}
+
+.restaurant__list {
+    white-space: nowrap;
+    overflow-y: auto;
+    list-style: none;
+    background-color: #2f127a;
+    color: white;
+    width: 400px;
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+    text-align: left;
+    user-select: none;
+}
+
+.restaurant__desc {
+    color: white;
+    width: 800px;
+    padding: 30px;
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
+}
+
+.restaurant__list li {
+    padding-left: 10px;
+}
+
+.restaurant__list li:hover{
+    background-color: red;
+}
+
+.main__content > span {
+    color: white;
+    font-family: "Segoe UI", serif;
+    font-size: 20px;
 }
 
 .main__content {
@@ -35,18 +87,4 @@ body,html {
     font-size: 25px;
     font-family: "Segoe UI", serif;
     margin: 20px 0;
-}
-
-#text {
-    margin-top: 150px;
-    margin-left: 200px;
-    font-size: 30px;
-    color: white;
-    font-family: "Segoe UI", serif;
-}
-
-.main__content > span {
-    color: white;
-    font-family: "Segoe UI", serif;
-    font-size: 20px;
 }

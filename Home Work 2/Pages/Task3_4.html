@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Work 2</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="topBar">
+    <a href="HomePage">Home Work</a>
+    <a href="Task1">Task 1</a>
+    <a href="Task2">Task 2</a>
+    <a href="Task3_4">Task 3/4</a>
+    <a href="Task5">Task 5</a>
+</nav>
+<main>
+    <div class="restaurant__container">
+        <ul class="restaurant__list">
+        </ul>
+        <div class="restaurant__desc">
+        </div>
+    </div>
+</main>
+<script>
+    window.addEventListener('load',()=> {
+        fetch("/?restaurants", {
+            method: "GET",
+            headers: {
+                "active": "application/json",
+                'Content-Type': 'application/json',
+            }
+        }).then(response => response.json()).then(data => {
+            console.log(data);
+            let restaurant__list = document.querySelector(".restaurant__list");
+            for (let  i =0;i< data.length;i++) {
+                let newRestaurant = document.createElement('li');
+                newRestaurant.textContent = data[i].name;
+                newRestaurant.addEventListener('click', () => {
+                    let desc = document.createElement('div');
+                    desc.textContent = data[i].description;
+                    let country = document.createElement('div');
+                    country.textContent = data[i].country;
+                    let city = document.createElement('div');
+                    city.textContent = data[i].city;
+                    let name = document.createElement('div');
+                    name.textContent = data[i].name;
+                    
+                    let restaurant__desc = document.querySelector(".restaurant__desc");
+                    while (restaurant__desc?.firstChild){
+                        restaurant__desc.removeChild(restaurant__desc.firstChild);
+                    }
+                    restaurant__desc?.appendChild(name);
+                    restaurant__desc?.appendChild(name);
+                    restaurant__desc?.appendChild(desc);
+                    restaurant__desc?.appendChild(country);
+                    restaurant__desc?.appendChild(city);
+                })
+                restaurant__list.appendChild(newRestaurant);
+            }
+        })
+    });
+</script>
+</body>
+</html>

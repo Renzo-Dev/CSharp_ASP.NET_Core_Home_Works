@@ -12,9 +12,42 @@ app.UseStaticFiles();
 app.Run(async (ctx) =>
 {
     var path = Uri.UnescapeDataString(ctx.Request.Path);
-    Console.WriteLine(path);
+    string? query = ctx.Request.QueryString.ToString();
+    Console.WriteLine(query);
 
-    if (path == "/GetRandomSymbol")
+    if (query == "?restaurants")
+    {
+        List<Restaurant> restaurants = new List<Restaurant>(new[]
+        {
+            new Restaurant("Гурманское наслаждение",
+                "Изысканный ресторан, где вы сможете насладиться изысканными блюдами и неповторимой атмосферой.",
+                "Ukraine", "Kiev"),
+            new Restaurant("Вкусные секреты",
+                "Уютное место, где каждое блюдо приготовлено с любовью и вниманием к деталям", "Ukraine", "Kiev"),
+            new Restaurant("Рестофесть",
+                "Ресторан с прекрасным видом, где вы сможете насладиться великолепными блюдами и потрясающими закатами.",
+                "Ukraine", "Kiev"),
+            new Restaurant("Гастрономический рай",
+                "Инновационный ресторан, где вас ждут смелые сочетания вкусов и оригинальные кулинарные решения.",
+                "Ukraine", "Kiev"),
+            new Restaurant("Ароматные кулинарные чудеса",
+                "Место, где гастрономические вкусы встречаются с традиционными рецептами, чтобы создать неповторимый опыт.",
+                "Ukraine", "Kiev"),
+            new Restaurant("Кулинарное путешествие",
+                "Ресторан, где каждое блюдо - это произведение искусства, сочетающее в себе элегантность и восхитительный вкус.",
+                "Ukraine", "Kiev"),
+            new Restaurant("Сладкий уголок",
+                "Оазис для гурманов, предлагающий широкий выбор изысканных блюд и отличный сервис.", "Ukraine",
+                "Kiev"),
+            new Restaurant("Уютная трапеза",
+                "Ресторан, где деликатесы и свежие ингредиенты воплощаются в блюдах, вызывающих настоящий восторг.",
+                "Ukraine", "Kiev"),
+        });
+
+        ctx.Response.Headers.ContentType = "application/json; charset=utf-8";
+        await ctx.Response.WriteAsJsonAsync(restaurants);
+    }
+    else if (path == "/GetRandomSymbol")
     {
         char randomChar = (char)new Random().Next('a', 'z' + 1);
         ctx.Response.Headers.ContentType = "application/json; charset=utf-8";
@@ -40,15 +73,10 @@ app.Run(async (ctx) =>
         ctx.Response.ContentType = "text/html; charset=utf-8";
         await ctx.Response.SendFileAsync("Pages/Task2.html");
     }
-    else if (path == "/Task3")
+    else if (path == "/Task3_4")
     {
         ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task3.html");
-    }
-    else if (path == "/Task4")
-    {
-        ctx.Response.ContentType = "text/html; charset=utf-8";
-        await ctx.Response.SendFileAsync("Pages/Task4.html");
+        await ctx.Response.SendFileAsync("Pages/Task3_4.html");
     }
     else if (path == "/Task5")
     {
@@ -63,3 +91,5 @@ app.Run(async (ctx) =>
 });
 
 app.Run();
+
+public record Restaurant(string? Name,string Description,string Country,string City);

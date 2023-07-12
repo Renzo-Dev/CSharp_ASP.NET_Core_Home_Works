@@ -17,22 +17,4 @@
         <a href="Task3_4">Task 3/4</a>
         <a href="Task5">Task 5</a>
     </nav>
-    <div id="text">
-    </div>
 </div>
-<script>
-    window.addEventListener('load',()=> {
-        fetch("/GetRandomSymbol", {
-            method: "GET",
-            headers: {
-                "active": "application/json",
-                'Content-Type': 'application/json',
-                body: JSON.stringify({key: 'value'})
-            }
-        }).then(response => response.json()).then(data => {
-            document.getElementById('text').innerHTML = "Случайный символ: " + data;
-        })
-    });
-</script>
-</body>
-</html>
