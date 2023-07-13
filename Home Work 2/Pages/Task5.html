@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,7 +9,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div>
+<header>
     <nav class="topBar">
         <a href="HomePage">Home Work</a>
         <a href="Task1">Task 1</a>
@@ -17,4 +17,70 @@
         <a href="Task3_4">Task 3/4</a>
         <a href="Task5">Task 5</a>
     </nav>
-</div>
+</header>
+<main id="show__countries">
+</main>
+<script>
+    window.addEventListener('load',()=> {
+       // получаем список стран и инф. о них
+       fetch("/?countries",{
+           method:"GET",
+           headers: {
+               "active": "application/json",
+               'Content-Type': 'application/json',
+           }
+       }).then(response => response.json()).then(data => {
+           console.dir(data);
+           let show__countries = document.querySelector("#show__countries");
+           
+           data.forEach((country)=> {
+               let dataCountryContainer = document.createElement('div');
+               dataCountryContainer.classList.add("countryContainer");
+
+               // Название страны
+               let title__name = document.createElement('div');
+               let Name = document.createElement('div');
+               Name.textContent = country.name;
+               Name.style.marginBottom = "20px";
+               title__name.textContent = "Название страны:";
+               dataCountryContainer.appendChild(title__name);
+               dataCountryContainer.appendChild(Name);
+               // Столица
+               let title__capital = document.createElement('div');
+               let capital = document.createElement('div');
+               capital.textContent = country.capital;
+               capital.style.marginBottom = "20px";
+               title__capital.textContent = "Столица: ";
+               dataCountryContainer.appendChild(title__capital);
+               dataCountryContainer.appendChild(capital);
+               // Континент
+               let continent = document.createElement('div');
+               let title_continent = document.createElement('div');
+               continent.textContent = country.continent;
+               continent.style.marginBottom = "20px";
+               title_continent.textContent = "Континент: ";
+               dataCountryContainer.appendChild(title_continent);
+               dataCountryContainer.appendChild(continent);
+               // Офф. Язык
+               let officialLanguage = document.createElement('div');
+               let title_officialLanguage = document.createElement('div');
+               officialLanguage.textContent = country.officialLanguage;
+               officialLanguage.style.marginBottom = "20px";
+               title_officialLanguage.textContent = "Официальный язык: ";
+               dataCountryContainer.appendChild(title_officialLanguage);
+               dataCountryContainer.appendChild(officialLanguage);
+               // популяция
+               let population = document.createElement('div');
+               let title_population = document.createElement('div');
+               population.textContent = country.population;
+               title_population.style.marginBottom = "20px";
+               title_population.textContent = "Популяция: ";
+               dataCountryContainer.appendChild(title_population);
+               dataCountryContainer.appendChild(population);
+               show__countries.appendChild(dataCountryContainer);
+           })
+       }) 
+    });
+</script>
+</body>
+</html>

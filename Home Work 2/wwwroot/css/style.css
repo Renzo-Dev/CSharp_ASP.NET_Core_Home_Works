@@ -88,3 +88,22 @@ body,html {
     font-family: "Segoe UI", serif;
     margin: 20px 0;
 }
+
+.countryContainer {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #615372;
+    padding: 20px;
+    font-family: "Segoe UI", serif;
+    font-size: 20px;
+}
+
+#show__countries {
+    display: flex;
+    width: 1500px;
+    height: 600px;
+    margin: 50px auto;
+    background-color: #4f1dcc;
+}
