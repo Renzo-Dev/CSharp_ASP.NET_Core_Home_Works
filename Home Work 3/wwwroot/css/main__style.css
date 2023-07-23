@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+    background-color: gray;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: "Segoe UI", serif;
+}
+
+.top__bar {
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.top__bar > a:first-child {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.top__bar a {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.top__bar div > a {
+    margin-left: 50px;
+}
+
+main {
+    padding: 40px;
+}
+
+main > h1,span {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+main > span {
+    font-size: 25px;
+}

@@ -1,0 +1,68 @@
+.input__data {
+    width: 400px;
+    height: fit-content;
+    background-color: rgba(77, 77, 77, 0.97);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 12px;
+    user-select: none;
+}
+
+.form__input__data {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+}
+
+.form__input__data > span {
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+    font-weight: 600;
+    justify-self: center;
+    width: 200px;
+    height: 50px;
+    align-self: center;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.form__input__data > input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #333333;
+    padding: 0 10px;
+    color: #a7a7a7;
+    font-size: 25px;
+}
+
+.form__input__data > input::placeholder{
+    border: none;
+    outline: none;
+}
+
+.input__data .form__input__data:hover span {
+    border-radius: 7px;
+    background-color: #333333;
+}
+
+#button__submit{
+    text-align: center;
+}
+
+#button__submit > input {
+    background-color: #333333;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-family: "Segoe UI", serif;
+    font-size: 23px;
+}
+
+#button__submit > input:active {
+    background-color: #a7a7a7;
+}

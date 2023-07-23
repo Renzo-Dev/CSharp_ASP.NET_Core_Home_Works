@@ -7,9 +7,4 @@
         <RootNamespace>Home_Work_3</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Pages\" />
-      <Folder Include="wwwroot\" />
-    </ItemGroup>
-
 </Project>
