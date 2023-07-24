@@ -43,11 +43,6 @@
     outline: none;
 }
 
-.input__data .form__input__data:hover span {
-    border-radius: 7px;
-    background-color: #333333;
-}
-
 #button__submit{
     text-align: center;
 }

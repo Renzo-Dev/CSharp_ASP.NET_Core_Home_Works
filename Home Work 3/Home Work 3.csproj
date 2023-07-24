@@ -7,4 +7,8 @@
         <RootNamespace>Home_Work_3</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\Task1.js" />
+    </ItemGroup>
+
 </Project>
