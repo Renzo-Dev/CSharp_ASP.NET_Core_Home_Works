@@ -1,3 +1,8 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+
 .input__data {
     width: 400px;
     height: fit-content;
@@ -15,6 +20,17 @@
     height: 60px;
 }
 
+.form__input__data > input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #333333;
+    padding: 0 10px;
+    color: #a7a7a7;
+    font-size: 25px;
+}
+
 .form__input__data > span {
     font-family: "Segoe UI", serif;
     font-size: 25px;
@@ -25,17 +41,6 @@
     align-self: center;
     margin-right: 5px;
     text-align: center;
-}
-
-.form__input__data > input {
-    height: 50px;
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: #333333;
-    padding: 0 10px;
-    color: #a7a7a7;
-    font-size: 25px;
 }
 
 .form__input__data > input::placeholder{
@@ -60,4 +65,36 @@
 
 #button__submit > input:active {
     background-color: #a7a7a7;
+}
+
+#users__table {
+    background-color: #4f4f4f;
+    color: white;
+    border: 5px solid #434343;
+    padding: 15px;
+    border-radius: 7px;
+    width: 800px;
+    margin-left: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#users__table table {
+    font-family: "Segoe UI", serif;
+    font-size: 23px;
+}
+
+#users__table table tr th {
+    padding-right: 50px;
+}
+
+#users__table table tr td {
+    user-select: none;
+}
+
+.user_tb__button {
+    background-color: #333333;
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
 }
