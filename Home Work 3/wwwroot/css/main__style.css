@@ -1,13 +1,13 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-html,body {
+html, body {
     background-color: gray;
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
     font-family: "Segoe UI", serif;
@@ -39,7 +39,7 @@ main {
     padding: 40px;
 }
 
-main > h1,span {
+main > h1, span {
     margin-top: 30px;
     margin-bottom: 30px;
     color: white;

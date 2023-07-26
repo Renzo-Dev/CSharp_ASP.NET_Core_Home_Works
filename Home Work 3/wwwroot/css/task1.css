@@ -1,4 +1,4 @@
-main{
+main {
     display: flex;
     flex-direction: row;
 }
@@ -43,12 +43,12 @@ main{
     text-align: center;
 }
 
-.form__input__data > input::placeholder{
+.form__input__data > input::placeholder {
     border: none;
     outline: none;
 }
 
-#button__submit{
+#button__submit {
     text-align: center;
 }
 

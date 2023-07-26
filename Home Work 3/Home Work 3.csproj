@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\js\Task1.js" />
+        <_ContentIncludedByDefault Remove="wwwroot\js\Task1.js"/>
     </ItemGroup>
 
 </Project>
