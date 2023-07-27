@@ -109,6 +109,7 @@ window.addEventListener('load', () => {
         BirthDate.textContent = User.birthDate;
         tr.append(BirthDate);
 
+        
         // создаем кнопку Изменить
         const bEdit = document.createElement("button");
         bEdit.classList.add("user_tb__button");
