@@ -67,33 +67,39 @@ main {
     background-color: #a7a7a7;
 }
 
-#users__table {
+#users__container {
     background-color: #4f4f4f;
-    color: white;
     border: 5px solid #434343;
     padding: 15px;
     border-radius: 7px;
-    width: 800px;
     margin-left: 100px;
+    width: 800px;
+    max-height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-#users__table table {
+#users__container table {
     font-family: "Segoe UI", serif;
-    font-size: 23px;
+    overflow: auto;
+    width: 800px;
+    color: white;
+    text-align: left;
+    font-size: 20px;
 }
 
-#users__table table tr th {
+#users__container table tr th {
     padding-right: 50px;
 }
 
-#users__table table tr td {
+#users__container table td {
     user-select: none;
+    padding-bottom: 10px;
 }
 
 .user_tb__button {
     background-color: #333333;
+    width: 100px;
     font-size: 20px;
     color: white;
     margin-right: 10px;
