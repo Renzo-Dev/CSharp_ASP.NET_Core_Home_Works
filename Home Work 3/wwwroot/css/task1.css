@@ -3,7 +3,7 @@ main {
     flex-direction: row;
 }
 
-.input__data {
+.input__data__panel {
     width: 400px;
     height: fit-content;
     background-color: rgba(77, 77, 77, 0.97);
@@ -73,23 +73,26 @@ main {
     padding: 15px;
     border-radius: 7px;
     margin-left: 100px;
+    border-collapse: collapse;
     width: 800px;
     max-height: 400px;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 #users__container table {
     font-family: "Segoe UI", serif;
     overflow: auto;
-    width: 800px;
+    width: 780px;
     color: white;
     text-align: left;
     font-size: 20px;
 }
 
-#users__container table tr th {
+
+#users__container tr th {
     padding-right: 50px;
+    padding-bottom: 30px;
 }
 
 #users__container table td {

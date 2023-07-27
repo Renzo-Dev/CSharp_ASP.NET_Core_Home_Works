@@ -1,10 +1,19 @@
 window.addEventListener('load', () => {
-    // const usersData = {
-    //     firstName: 'Test',
-    //     lastName: 'Test',
-    //     Age: 30,
-    //     BirthDate: "1990-08-15"
-    // }
+    // Отправка формы ввода данных пользователя
+    document.getElementById("button__submit").addEventListener('click', e => {
+        e.preventDefault();
+        const form = document.forms["userForm"];
+        const Guid = form.elements["id"].value;
+        const firstName = form.elements["FirstName"].value;
+        const lastName = form.elements["LastName"].value;
+        const Age = form.elements["Age"].value;
+        const BirthDate = form.elements["BirthDate"].value;
+        if (Guid == 0)
+            createUser(firstName, lastName, Age, BirthDate);
+        else
+            editUser(Guid, firstName, lastName, Age, BirthDate);
+    });
+
     async function GetUsers() {
         const response = await fetch("/users", {
             method: "GET",
@@ -15,13 +24,60 @@ window.addEventListener('load', () => {
         });
         if (response.ok) {
             const users = await response.json();
-            console.dir(users);
             users.forEach(user => {
                 addRow(user);
             })
         } else {
             const error = await response.json();
             console.log(error.message);
+        }
+    }
+
+    async function createUser(firstName, lastName, age, birthDate) {
+        const response = await fetch("/users", {
+            method: "POST",
+            headers: {"Accept": "application/json", "Content-Type": "application/json"},
+            body: JSON.stringify({
+                FirstName: firstName,
+                LastName: lastName,
+                Age: parseInt(age),
+                BirthDate: birthDate
+            })
+        });
+        if (response.ok) {
+            const user = await response.json();
+            addRow(user);
+            resetInputForm();
+        } else {
+            const error = await response.json();
+        }
+    }
+
+    function resetInputForm() {
+        const form = document.forms["userForm"];
+        form.reset();
+        form.elements["id"].value = 0;
+    }
+
+    async function editUser(guid, firstName, lastName, age, birthDate) {
+        const response = await fetch("/users", {
+            method: "PUT",
+            headers: {"Accept": "application/json", "Content-Type": "application/json"},
+            body: JSON.stringify({
+                Guid: guid,
+                FirstName: firstName,
+                LastName: lastName,
+                Age: parseInt(age),
+                BirthDate: birthDate
+            })
+        });
+        if (response.ok) {
+            const user = await response.json();
+            resetInputForm();
+            document.querySelector("tr[userID='" + user.guid + "']").replaceWith(addRow(user));
+        } else {
+            const error = await response.json();
+            console.error(error.message);
         }
     }
 
@@ -50,13 +106,17 @@ window.addEventListener('load', () => {
 
         // создаем ячейку для Даты Рождения
         const BirthDate = document.createElement("td");
-        BirthDate.textContent = User.birthDate.split('T'[0]);
+        BirthDate.textContent = User.birthDate;
         tr.append(BirthDate);
 
         // создаем кнопку Изменить
         const bEdit = document.createElement("button");
         bEdit.classList.add("user_tb__button");
         bEdit.textContent = "Edit";
+        bEdit.addEventListener("click", e => {
+            e.preventDefault();
+            GetUser(id);
+        });
         tr.append(bEdit);
 
         // создаем кнопку Удалить
@@ -71,7 +131,12 @@ window.addEventListener('load', () => {
 
         // добавляем строку в таблицу
         table.append(tr);
+
+        return tr;
     }
 
     GetUsers();
 });
+
+
+../// Доделать GetUser(id) , RemoveUser(id)

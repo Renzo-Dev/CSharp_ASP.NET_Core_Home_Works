@@ -11,9 +11,13 @@ public class User
         BirthDate = birthDay;
     }
 
-    public string Guid { get; set; }
-    public string? FirstName { get; set; } // Имя
-    public string? LastName { get; set; } // Фамилия
-    public byte Age { get; set; } // возраст
-    public string? BirthDate { get; set; }
+    public User()
+    {
+    }
+
+    public string? Guid { get; set; } = "";
+    public string? FirstName { get; set; } = ""; // Имя
+    public string? LastName { get; set; } = ""; // Фамилия
+    public byte? Age { get; set; } = 0; // возраст
+    public string? BirthDate { get; set; } = "";
 }
