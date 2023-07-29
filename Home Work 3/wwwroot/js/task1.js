@@ -8,10 +8,12 @@ window.addEventListener('load', () => {
         const lastName = form.elements["LastName"].value;
         const Age = form.elements["Age"].value;
         const BirthDate = form.elements["BirthDate"].value;
-        if (Guid == 0)
-            createUser(firstName, lastName, Age, BirthDate);
-        else
-            editUser(Guid, firstName, lastName, Age, BirthDate);
+        if (firstName.length > 0 && lastName.length > 0 && Age > 0 && BirthDate.length > 0) {
+            if (Guid == 0)
+                createUser(firstName, lastName, Age, BirthDate);
+            else
+                editUser(Guid, firstName, lastName, Age, BirthDate);
+        }
     });
 
     async function GetUsers() {
@@ -109,14 +111,14 @@ window.addEventListener('load', () => {
         BirthDate.textContent = User.birthDate;
         tr.append(BirthDate);
 
-        
+
         // создаем кнопку Изменить
         const bEdit = document.createElement("button");
         bEdit.classList.add("user_tb__button");
         bEdit.textContent = "Edit";
         bEdit.addEventListener("click", e => {
             e.preventDefault();
-            GetUser(id);
+            GetUserData(User.guid);
         });
         tr.append(bEdit);
 
@@ -136,8 +138,36 @@ window.addEventListener('load', () => {
         return tr;
     }
 
+    async function deleteUser(id) {
+        const response = await fetch("/users/" + id, {
+            method: "DELETE",
+            headers: {"Accept": "application/json", "Content-Type": "application/json"}
+        });
+        if (response.ok) {
+            const user = await response.json();
+            document.querySelector("tr[userID='" + user.guid + "']").remove();
+        } else {
+            const error = await response.json();
+            console.error(error.message);
+        }
+    }
+
+    async function GetUserData(id) {
+        const response = await fetch("/users/" + id, {
+            method: "GET",
+            headers: {"Accept": "application/json", "Content-Type": "application/json"}
+        });
+        if (response.ok) {
+            let user = await response.json();
+            console.dir(user);
+            const form = document.forms["userForm"];
+            form.elements["id"].value = user.guid;
+            form.elements["FirstName"].value = user.firstName;
+            form.elements["LastName"].value = user.lastName;
+            form.elements["Age"].value = user.age;
+            form.elements["BirthDate"].value = user.birthDate;
+        }
+    }
+
     GetUsers();
 });
-
-
-../// Доделать GetUser(id) , RemoveUser(id)

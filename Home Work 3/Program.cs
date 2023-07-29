@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Home_Work_3;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,16 +16,16 @@ var users = new List<User>
 };
 
 app.UseStaticFiles();
-
-app.MapWhen(ctx => ctx.Request.Method == "GET" && ctx.Request.Path.StartsWithSegments("/users"), GetAllUsers);
-app.MapWhen(ctx => ctx.Request.Method == "POST" && ctx.Request.Path.StartsWithSegments("/users"), CreateUser);
-app.MapWhen(ctx => ctx.Request.Method == "PUT" && ctx.Request.Path.StartsWithSegments("/users"), EditUser);
-///////////////
-///////////////
-/////////////// СДЕЛАТЬ ЧЕРЕЗ MAP
-///////////////
-///////////////
-///////////////
+app.UseWhen(ctx => ctx.Request.Path.StartsWithSegments("/users"), app =>
+{
+    var expressionForGuid = @"^/users/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$";
+    app.MapWhen(ctx => ctx.Request.Method == "GET" && Regex.IsMatch(ctx.Request.Path, expressionForGuid), GetUser);
+    app.MapWhen(ctx => ctx.Request.Method == "DELETE" && Regex.IsMatch(ctx.Request.Path, expressionForGuid),
+        RemoveUser);
+    app.MapWhen(ctx => ctx.Request.Method == "GET", GetAllUsers);
+    app.MapWhen(ctx => ctx.Request.Method == "POST", CreateUser);
+    app.MapWhen(ctx => ctx.Request.Method == "PUT", EditUser);
+});
 
 app.Map("/Task1", Task1);
 app.Map("/Task2", Task2);
@@ -36,13 +37,53 @@ app.Run(async ctx =>
 
 app.Run();
 
+void RemoveUser(IApplicationBuilder app)
+{
+    app.Run(async ctx =>
+    {
+        var id = ctx.Request.Path.Value?.Split("/")[2];
+        // получаем пользователя по id
+
+        var user = users.FirstOrDefault(u => u.Guid == id);
+        // если пользователь найден, удаляем его
+        if (user != null)
+        {
+            users.Remove(user);
+            await ctx.Response.WriteAsJsonAsync(user);
+        }
+        // если не найден, отправляем статусный код и сообщение об ошибке
+        else
+        {
+            ctx.Response.StatusCode = 404;
+            await ctx.Response.WriteAsJsonAsync(new { message = "Пользователь не найден" });
+        }
+    });
+}
+
+void GetUser(IApplicationBuilder app)
+{
+    app.Run(async ctx =>
+    {
+        var id = ctx.Request.Path.Value?.Split("/")[2];
+        // получаем пользователя по id
+
+        foreach (var user in users)
+            if (user.Guid == id)
+            {
+                await ctx.Response.WriteAsJsonAsync(user);
+                return;
+            }
+
+        ctx.Response.StatusCode = 404;
+        await ctx.Response.WriteAsJsonAsync(new { message = "User not found" });
+    });
+}
+
 // создать и добавить пользователя
 void CreateUser(IApplicationBuilder app)
 {
     app.Run(async ctx =>
     {
-        Console.WriteLine(ctx.Request.Path);
-        Console.WriteLine(ctx.Request.Method);
         try
         {
             // получаем данные пользователя
