@@ -1,10 +1,6 @@
 using System.Text.RegularExpressions;
 using Home_Work_3;
 
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-
 // создаем пользователей ( временная БД ) 
 var users = new List<User>
 {
@@ -15,7 +11,55 @@ var users = new List<User>
     new(Guid.NewGuid().ToString(), "Michel", "Johnson", 38, "1999-12-03")
 };
 
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
 app.UseStaticFiles();
+app.UseWhen(ctx => ctx.Request.Path.StartsWithSegments("/upload"),
+    app =>
+    {
+        app.MapWhen(ctx => ctx.Request.Method == "POST", app =>
+        {
+            app.Run(async ctx =>
+            {
+                // получаем отправленные файлы формы
+                var files = ctx.Request.Form.Files;
+                ctx.Response.ContentType = "text/html; charset=utf-8";
+
+                // путь к папке с файлами и подпапкам
+                var uploadPath = $@"{Environment.CurrentDirectory}\uploads";
+                var photoFolder = Path.Combine(uploadPath, "Photo");
+                var textFolder = Path.Combine(uploadPath, "Text");
+
+                // создаем папки
+                Directory.CreateDirectory(photoFolder);
+                Directory.CreateDirectory(textFolder);
+
+                foreach (var file in files)
+                {
+                    // получаем тип(расширение) файла
+                    var fileExtension = Path.GetExtension(file.FileName).TrimStart('.').ToLower();
+                    // 
+                    if (fileExtension is "jpg" or "png" or "gif")
+                    {
+                        using (var fileStream = new FileStream($"{photoFolder}/{file.FileName}", FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                        }
+                    }
+                    else if (fileExtension is "txt" or "doc" or "pdf")
+                    {
+                        using (var fileStream = new FileStream($"{textFolder}/{file.FileName}", FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                        }
+
+                        await ctx.Response.WriteAsync("Файлы успешно загружены");
+                    }
+                }
+            });
+        });
+    });
 app.UseWhen(ctx => ctx.Request.Path.StartsWithSegments("/users"), app =>
 {
     var expressionForGuid = @"^/users/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$";

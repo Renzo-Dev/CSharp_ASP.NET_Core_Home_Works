@@ -1,0 +1,44 @@
+#main__content {
+    display: flex;
+    flex-direction: column;
+}
+
+#send__files__form {
+    display: flex;
+    flex-direction: column;
+}
+
+#main__content h2 {
+    color: white;
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+}
+
+#send__files__form input[type="file"] {
+    width: 300px;
+    color: white;
+}
+
+#send__files__form input[type="file"]:first-child {
+    margin-top: 20px;
+}
+
+#send__files__form input[type="file"]::file-selector-button {
+    font-size: 20px;
+    border-radius: 7px;
+    background-color: white;
+    border: none;
+}
+
+#send__files__form input[type="file"]::file-selector-button:active {
+    background-color: #808080;
+}
+
+#send_files_button {
+    width: 300px;
+    height: 40px;
+    color: black;
+    margin-top: 20px;
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+}
