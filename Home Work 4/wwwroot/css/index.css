@@ -1,0 +1,18 @@
+.main__content h2 {
+    color: white;
+    font-family: "Segoe UI", serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.main__content header, p {
+    font-family: "Segoe UI", serif;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.main__content {
+    margin: 0 20px;
+}

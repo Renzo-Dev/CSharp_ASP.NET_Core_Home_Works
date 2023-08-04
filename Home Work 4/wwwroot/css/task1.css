@@ -1,0 +1,15 @@
+main {
+    color: white;
+    font-family: "Segoe UI", serif;
+}
+
+.container__task1, .container__task2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.container__task1, .container__task2, h2 {
+    margin-bottom: 20px;
+}

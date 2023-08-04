@@ -5,6 +5,13 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Home_Work_4</RootNamespace>
+
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="wwwroot\Images\Background\About.jpg"/>
+        <None Include="wwwroot\Images\Background\gallery.jpg"/>
+        <None Include="wwwroot\Images\Background\Home.jpg"/>
+        <None Include="wwwroot\Images\Background\News.jpg"/>
+    </ItemGroup>
 </Project>
