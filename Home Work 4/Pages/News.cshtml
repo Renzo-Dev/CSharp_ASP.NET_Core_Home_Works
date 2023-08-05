@@ -13,12 +13,13 @@
 <body>
 <div class="background-image">
     <div class="content">
-        <nav class="top__bar__panel">
-            <a href="/Task2">Home</a>
-        </nav>
+        <a href="/Task2">Home</a>
         @for (var i = 0; i < Model._news.Count; i++)
         {
             <div class="news__container">
+                <div class="news__date">@Model._news[i].date</div>
+                <div class="news__name">@Model._news[i].News_Name</div>
+                <div class="news__content">@Model._news[i].content</div>
             </div>
         }
     </div>

@@ -38,7 +38,7 @@ html, body {
 
 .top__bar__panel a:hover {
     color: white;
-    animation: slide-down 500ms forwards;
+    transform: translateY(15px);
 }
 
 .top__bar__panel a {
@@ -50,49 +50,6 @@ html, body {
     font-weight: 500;
     text-shadow: 0px 10px 6px rgba(0, 0, 0, 3.5);
     padding: 15px;
-}
-
-@keyframes slide-down {
-    from {
-        transform: translateY(0); /* Начальное положение текста вверху */
-    }
-    to {
-        transform: translateY(10px); /* Конечное положение текста внизу */
-    }
-}
-
-.main__container div {
-    color: white;
-    font-size: 20px;
-    font-family: 'Segoe UI', serif;
-    font-weight: 500;
-    width: 400px;
-    align-self: start;
-    margin-left: 40px;
-    margin-top: 40px;
-}
-
-.bottom_left__content {
-    position: absolute;
-    top: 550px;
-}
-
-.bottom_left__content h2 {
-    margin-bottom: 20px;
-}
-
-.top__right__content {
-    position: absolute;
-    right: 150px;
-    top: 100px;
-}
-
-.top__right__content h2 {
-    white-space: nowrap;
-}
-
-.bottom_right__content {
-    position: absolute;
-    top: 550px;
-    right: 150px;
+    transform: translateY(0);
+    transition: all 300ms ease-in-out;
 }
