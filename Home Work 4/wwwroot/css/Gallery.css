@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 150%;
+    width: 100%;
+    background: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content nav {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.hButton__Home {
+    color: white;
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.gallery__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__wrapper img {
+    margin-top: 20px;
+    width: 900px;
+    height: 500px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.fade-image {
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+/* Общие стили для скроллбара */
+::-webkit-scrollbar {
+    width: 6px; /* ширина вертикального скроллбара */
+}
+
+/* Фон скроллбара */
+::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
