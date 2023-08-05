@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Images/Background/News.jpg');
+    background-size: cover;
+}

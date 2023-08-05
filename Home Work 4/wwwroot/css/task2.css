@@ -14,6 +14,7 @@ html, body {
 }
 
 .main__container {
+    overflow: auto;
     background-image: url('../Images/Background/Home.jpg');
     background-size: cover;
     background-position: center;
@@ -60,11 +61,38 @@ html, body {
     }
 }
 
-@keyframes slide-text {
-    from {
+.main__container div {
+    color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI', serif;
+    font-weight: 500;
+    width: 400px;
+    align-self: start;
+    margin-left: 40px;
+    margin-top: 40px;
+}
 
-    }
-    to {
+.bottom_left__content {
+    position: absolute;
+    top: 550px;
+}
 
-    }
+.bottom_left__content h2 {
+    margin-bottom: 20px;
+}
+
+.top__right__content {
+    position: absolute;
+    right: 150px;
+    top: 100px;
+}
+
+.top__right__content h2 {
+    white-space: nowrap;
+}
+
+.bottom_right__content {
+    position: absolute;
+    top: 550px;
+    right: 150px;
 }

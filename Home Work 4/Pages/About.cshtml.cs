@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Home_Work_4.Pages.Counter_Strike_Global_Offcensive;
+namespace Home_Work_4.Pages;
 
 public class About : PageModel
 {

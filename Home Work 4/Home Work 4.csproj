@@ -14,4 +14,10 @@
         <None Include="wwwroot\Images\Background\Home.jpg"/>
         <None Include="wwwroot\Images\Background\News.jpg"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Pages\Counter Strike Global Offcensive\About.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\Counter Strike Global Offcensive\Gallery.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\Counter Strike Global Offcensive\News.cshtml"/>
+    </ItemGroup>
 </Project>
