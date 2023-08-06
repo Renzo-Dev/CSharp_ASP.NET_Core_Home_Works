@@ -7,4 +7,10 @@
         <RootNamespace>Home_Work_5</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+    </ItemGroup>
+
+
+
 </Project>

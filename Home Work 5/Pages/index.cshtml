@@ -1,0 +1,31 @@
+@page
+@model Home_Work_5.Pages.index
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+
+    <title>Home Work 5</title>
+</head>
+<body style="background: #110f23">
+<div class="content">
+    <span class="header__books">Книги</span>
+    <main class="books__library__container">
+        @foreach (var book in Model.books)
+        {
+            <div class="book__wrapper">
+                <span class="book__name" name="book__name" title="@book.Title">Название: @book.Title</span>
+                <span class="book__Author" title="@book.Author">Автор: @book.Author</span>
+                <span class="book__publicationYear" title="@book.Publisher">Год издания: @book.PublicationYear</span>
+            </div>
+        }
+    </main>
+</div>
+<script src="js/js.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 99%;
+    width: 99.4vw;
+}
+
+.content {
+    width: inherit;
+    height: inherit;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.header__books {
+    color: white;
+    font-size: 3vw;
+    font-family: "Segoe UI", serif;
+}
+
+.books__library__container {
+    margin-top: 20px;
+    color: white;
+    width: 95%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
+}
+
+.book__wrapper {
+    user-select: none;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+    width: 230px;
+    height: 85px;
+    border: 1px ridge white;
+    border-radius: 13px;
+    transition: transform 0.3s ease;
+}
+
+.book__wrapper:hover {
+    transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+}
+
+.book__name,.book__Author,.book__publicationYear {
+    white-space: nowrap;
+    font-family: "Segoe UI", serif;
+    margin-bottom: 10px;
+    width: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Общие стили для скроллбара */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Фон скроллбара */
+::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
