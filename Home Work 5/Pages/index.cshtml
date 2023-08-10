@@ -1,4 +1,5 @@
-@page
+@page "{handler?}"
+@using Home_Work_5
 @model Home_Work_5.Pages.index
 
 
@@ -16,12 +17,13 @@
 <div class="content">
     <span class="header__books">Книги</span>
     <main class="books__library__container">
-        @foreach (var book in Model.books)
+        @for (var i = 0; i < Book.books.Count; i++)
         {
             <div class="book__wrapper">
-                <span class="book__name" name="book__name" title="@book.Title">Название: @book.Title</span>
-                <span class="book__Author" title="@book.Author">Автор: @book.Author</span>
-                <span class="book__publicationYear" title="@book.Publisher">Год издания: @book.PublicationYear</span>
+                <div id="id" hidden="hidden" content="@i"></div>
+                <span class="book__name" name="book__name" title="@Book.books[i].Title">Название: @Book.books[i].Title</span>
+                <span class="book__Author" title="@Book.books[i].Author">Автор: @Book.books[i].Author</span>
+                <span class="book__publicationYear" title="@Book.books[i].Publisher">Год издания: @Book.books[i].PublicationYear</span>
             </div>
         }
     </main>

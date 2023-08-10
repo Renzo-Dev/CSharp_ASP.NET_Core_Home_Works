@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-html,body {
+html, body {
     height: 99%;
     width: 99.4vw;
 }
@@ -45,6 +45,8 @@ html,body {
     padding: 15px;
     margin: 10px;
     width: 230px;
+    max-width: 230px;
+    min-width: 230px;
     height: 85px;
     border: 1px ridge white;
     border-radius: 13px;
@@ -55,7 +57,7 @@ html,body {
     transform: matrix(1.1, 0, 0, 1.1, 0, 0);
 }
 
-.book__name,.book__Author,.book__publicationYear {
+.book__name, .book__Author, .book__publicationYear {
     white-space: nowrap;
     font-family: "Segoe UI", serif;
     margin-bottom: 10px;

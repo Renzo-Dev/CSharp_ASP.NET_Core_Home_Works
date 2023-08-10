@@ -8,9 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+        <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml"/>
     </ItemGroup>
-
 
 
 </Project>
