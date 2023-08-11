@@ -1,7 +1,6 @@
-@page "{handler?}"
+@page
 @using Home_Work_5
-@model Home_Work_5.Pages.index
-
+@model Home_Work_5.Pages.Index
 
 <!doctype html>
 <html lang="en">
@@ -19,15 +18,13 @@
     <main class="books__library__container">
         @for (var i = 0; i < Book.books.Count; i++)
         {
-            <div class="book__wrapper">
-                <div id="id" hidden="hidden" content="@i"></div>
+            <a href="/book?id=@i" class="book__wrapper">
                 <span class="book__name" name="book__name" title="@Book.books[i].Title">Название: @Book.books[i].Title</span>
                 <span class="book__Author" title="@Book.books[i].Author">Автор: @Book.books[i].Author</span>
                 <span class="book__publicationYear" title="@Book.books[i].Publisher">Год издания: @Book.books[i].PublicationYear</span>
-            </div>
+            </a>
         }
     </main>
 </div>
-<script src="js/js.js"></script>
 </body>
 </html>

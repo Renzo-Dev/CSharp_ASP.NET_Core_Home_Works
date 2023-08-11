@@ -4,23 +4,31 @@ public class Book
 {
     public static List<Book> books = new()
     {
-        new()
+        new Book
         {
-            Title = "Преступление и наказание",
-            Author = "Фёдор Достоевский",
+            Author = "Леся Українка",
+            Genre = "Поезія",
+            PublicationYear = 1907,
+            Publisher = "Київ",
+            Title = "Лісова пісня"
+        },
+        new Book
+        {
+            Author = "Іван Франко",
             Genre = "Роман",
-            Publisher = "The Russian Messenger",
-            PublicationYear = 1866
+            PublicationYear = 1895,
+            Publisher = "Львів",
+            Title = "Захар Беркут"
         },
-        new()
+        new Book
         {
-            Title = "1984",
-            Author = "Джордж Оруэлл",
-            Genre = "Дистопия",
-            Publisher = "Secker & Warburg",
-            PublicationYear = 1949
+            Author = "Михайло Коцюбинський",
+            Genre = "Повість",
+            PublicationYear = 1906,
+            Publisher = "Львів",
+            Title = "Тіні забутих предків"
         },
-        new()
+        new Book
         {
             Title = "Война и мир",
             Author = "Лев Толстой",
@@ -28,15 +36,7 @@ public class Book
             Publisher = "Русский вестник",
             PublicationYear = 1869
         },
-        new()
-        {
-            Title = "1984",
-            Author = "Джордж Оруэлл",
-            Genre = "Научная фантастика",
-            Publisher = "Северный альянс",
-            PublicationYear = 1949
-        },
-        new()
+        new Book
         {
             Title = "Гарри Поттер и философский камень",
             Author = "Джоан Роулинг",
@@ -44,7 +44,7 @@ public class Book
             Publisher = "Розенталь",
             PublicationYear = 1997
         },
-        new()
+        new Book
         {
             Title = "Преступление и наказание",
             Author = "Фёдор Достоевский",
@@ -52,21 +52,53 @@ public class Book
             Publisher = "Петербургские ведомости",
             PublicationYear = 1866
         },
-        new()
-        {
-            Title = "1984",
-            Author = "Джордж Оруэлл",
-            Genre = "Фантастика",
-            Publisher = "Северное море",
-            PublicationYear = 1949
-        },
-        new()
+        new Book
         {
             Title = "Мастер и Маргарита",
             Author = "Михаил Булгаков",
             Genre = "Сатира",
             Publisher = "Москва",
             PublicationYear = 1967
+        },
+        new Book
+        {
+            Author = "George Orwell",
+            Genre = "Dystopian Fiction",
+            PublicationYear = 1949,
+            Publisher = "Secker & Warburg",
+            Title = "Nineteen Eighty-Four"
+        },
+        new Book
+        {
+            Author = "J.K. Rowling",
+            Genre = "Fantasy",
+            PublicationYear = 1997,
+            Publisher = "Bloomsbury",
+            Title = "Harry Potter and the Philosopher's Stone"
+        },
+        new Book
+        {
+            Author = "Jane Austen",
+            Genre = "Classic Fiction",
+            PublicationYear = 1813,
+            Publisher = "Thomas Egerton",
+            Title = "Pride and Prejudice"
+        },
+        new Book
+        {
+            Author = "J.R.R. Tolkien",
+            Genre = "Fantasy",
+            PublicationYear = 1954,
+            Publisher = "Allen & Unwin",
+            Title = "The Lord of the Rings"
+        },
+        new Book
+        {
+            Author = "Harper Lee",
+            Genre = "Coming-of-age",
+            PublicationYear = 1960,
+            Publisher = "J. B. Lippincott & Co.",
+            Title = "To Kill a Mockingbird"
         }
     };
 
@@ -74,6 +106,5 @@ public class Book
     public string Genre;
     public int PublicationYear;
     public string Publisher;
-
     public string Title;
 }

@@ -1,0 +1,41 @@
+@page "/book"
+@using Home_Work_5
+@model Home_Work_5.Pages.bookPage
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/book.css">
+    <title>Book</title>
+</head>
+<body style="background:#110f23">
+<div class="book__content">
+    <div class="book__Title">
+        <span>Название Книги:</span>
+        <span>@Book.books[Model.id].Title</span>
+    </div>
+    <main>
+        <div class="book__Author">
+            <span>Автор:</span>
+            <span>@Book.books[Model.id].Author</span>
+        </div>
+        <div class="book__Genre">
+            <span>Стиль:</span>
+            <span>@Book.books[Model.id].Genre</span>
+        </div>
+        <div class="book__Publisher">
+            <span>Издатель:</span>
+            <span>@Book.books[Model.id].Publisher</span>
+        </div>
+        <div class="book__PublicationYear">
+            <span>Год Издания:</span>
+            <span>@Book.books[Model.id].PublicationYear</span>
+        </div>
+    </main>
+    <a href="/">Назад в библиотеку</a>
+</div>
+</body>
+</html>

@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml"/>
+        <_ContentIncludedByDefault Remove="wwwroot\js\js.js"/>
     </ItemGroup>
 
 

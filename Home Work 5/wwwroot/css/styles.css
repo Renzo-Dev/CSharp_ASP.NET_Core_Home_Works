@@ -50,6 +50,8 @@ html, body {
     height: 85px;
     border: 1px ridge white;
     border-radius: 13px;
+    text-decoration: none;
+    color: white;
     transition: transform 0.3s ease;
 }
 
@@ -57,7 +59,7 @@ html, body {
     transform: matrix(1.1, 0, 0, 1.1, 0, 0);
 }
 
-.book__name, .book__Author, .book__publicationYear {
+.book__name, .book__Title, .book__Author, .book__publicationYear {
     white-space: nowrap;
     font-family: "Segoe UI", serif;
     margin-bottom: 10px;
@@ -67,12 +69,10 @@ html, body {
 }
 
 
-/* Общие стили для скроллбара */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Фон скроллбара */
 ::-webkit-scrollbar-track {
     background-color: #1a1a1a;
 }
