@@ -8,8 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="wwwroot\css\" />
-      <Folder Include="wwwroot\script\" />
+      <Folder Include="wwwroot\images\" />
+      <Folder Include="wwwroot\scripts\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\User\Registration.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Category\Processors.cshtml" />
     </ItemGroup>
 
 </Project>
