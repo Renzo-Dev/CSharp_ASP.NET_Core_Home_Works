@@ -8,7 +8,7 @@
 html,body {
     height: 100vh;
     width: 100vw;
-    background: black;
+    background: #181818;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,8 +17,8 @@ html,body {
 .top__panel {
     width: 920px;
     max-width: 920px;
-    background: #181818;
-    padding: 10px;
+    background: #292929;
+    padding: 5px;
     height: 70px;
     max-height: 70px;
     display: flex;
@@ -36,7 +36,7 @@ html,body {
     margin: 10px;
     color: white;
     transition: color 150ms ease-in;
-    border: 2px solid #181818;
+    border: 2px solid #292929;
 }
 
 .top__panel a:focus-visible {
