@@ -8,18 +8,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-             <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Processors</title>
+    <link href="css/processorStyle.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    <div class="filter__panel__container">
-        
+<div class="filter__panel__container">
+    <div class="info__wrapper">
+        <header class="header">Модель</header>
+        <ul>
+            <li>
+                <input type="checkbox">
+                <span>AMD</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span>Intel</span>
+            </li>
+        </ul>
     </div>
-    <div class="products__container">
-        
+    <div class="info__wrapper">
+        <header class="header">Сокет процессора</header>
+        <ul>
+            @foreach (var socket in Model._templateData._sockets)
+            {
+                <li>
+                    <input type="checkbox">
+                    <span>@socket</span>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="info__wrapper">
+        <header class="header">Линейка</header>
+        <ul>
+            @foreach (var socket in Model._templateData._processor_lineup)
+            {
+                <li>
+                    <input type="checkbox">
+                    <span>@socket</span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="products__container">
+    <div class="show__processor__container">
+        <div class="processor__info">
+            <div>Процессор: <span>@Model._Processors[0].Model</span></div>
+            <div>Тип: Процессор</div>
+            <div>Архитектура: <span>@Model._Processors[0]._specifications.Architecture</span></div>
+            <div>Сокет процессора: <span>@Model._Processors[0]._specifications.Architecture</span></div>
+        </div>
     </div>
 </div>
 </body>
