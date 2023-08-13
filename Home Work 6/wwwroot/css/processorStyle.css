@@ -6,32 +6,59 @@
 body, html {
     height: fit-content;
     width: 99vw;
+    scroll-behavior: smooth;
 }
 
 .products__container {
-    background: red;
     margin: 100px 20px 20px 200px;
     width: 70%;
     height: 80vh;
 }
 
 .show__processor__container {
+    color: white;
     display: flex;
     flex-direction: row;
     padding: 15px;
-    border: 2px solid #393939;
-    height: 150px;
+    height: 200px;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.show__processor__container:not(:last-child) {
+    border-bottom: 2px solid #585858;
 }
 
 .processor__info {
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
+}
+
+.processor__info a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.processor__info div {
+    font-size: 20px;
+    font-family: Calibri, serif;
+}
+
+.processor__info div:not(:first-child) {
+    margin-top: 10px;
+    color: #cbcbcb;
+}
+
+.processor__info span {
+    margin-left: 10px;
+    color: white;
 }
 
 .filter__panel__container {
-    position: absolute;
-    top: 60px;
-    left: 20px;
+    position: fixed;
+    top: 80px;
+    left: 10px;
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -79,6 +106,19 @@ body, html {
     overflow: auto;
 }
 
+.price {
+    margin-left: auto;
+}
+
+.price span:first-child {
+    font-size: 25px;
+    margin-right: 10px;
+    font-family: "Segoe UI", serif;
+}
+
+.price span:last-child {
+    font-size: 30px;
+}
 
 ::-webkit-scrollbar {
     width: 7px;

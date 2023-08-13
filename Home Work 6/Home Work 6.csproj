@@ -12,4 +12,9 @@
         <_ContentIncludedByDefault Remove="Pages\Category\Processors.cshtml"/>
     </ItemGroup>
 
+
+    <ItemGroup>
+        <None Include="wwwroot\Images\Processors\AMD Ryzen 7 5800x.png"/>
+    </ItemGroup>
+
 </Project>

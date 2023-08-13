@@ -44,7 +44,7 @@
     <div class="info__wrapper">
         <header class="header">Линейка</header>
         <ul>
-            @foreach (var socket in Model._templateData._processor_lineup)
+            @foreach (var socket in Model._templateData.ProcessorLineup)
             {
                 <li>
                     <input type="checkbox">
@@ -55,14 +55,38 @@
     </div>
 </div>
 <div class="products__container">
-    <div class="show__processor__container">
-        <div class="processor__info">
-            <div>Процессор: <span>@Model._Processors[0].Model</span></div>
-            <div>Тип: Процессор</div>
-            <div>Архитектура: <span>@Model._Processors[0]._specifications.Architecture</span></div>
-            <div>Сокет процессора: <span>@Model._Processors[0]._specifications.Architecture</span></div>
+    @foreach (var processor in Model._Processors)
+    {
+        <div class="show__processor__container">
+            @{
+                var tmp = processor.Model;
+                tmp = tmp + ".png";
+            }
+            <img src="/Images/Processors/@tmp" height="200px" width="200px" alt="@processor.Model">
+            <div class="processor__info">
+                <a href="Processor?">
+                    <div>Процессор: @processor.Model</div>
+                </a>
+                <div>Тип: Процессор</div>
+                <div>Линейка процессора:<span>@processor._specifications.ProcessorLine</span></div>
+                <div>Архитектура: <span>@processor._specifications.Architecture</span></div>
+                <div>Сокет процессора: <span>@processor._specifications.Architecture</span></div>
+                <div>Базовая чистота, ГГц: <span>@processor._specifications.ClockFrequency</span></div>
+            </div>
+            <div class="price">
+                <span>Цена:</span>
+                <span >@processor._specifications.Price грн</span>
+            </div>
         </div>
-    </div>
+        ////////////////////////
+        ////////////////////////
+        ////////////////////////
+        ////////////////////////
+        ДОДЕЛАТЬ ФИЛЬТР НА СТРАНИЦЕ
+        ДОДЕЛАТЬ MODEL SHOW
+            СТРАНИЦА ОТПРАВКИ МОДЕРАТОРУ СООБЩЕНИЯ
+                СТРАНИЦА МЕНЕДЖЕРА ДЛЯ ПРОСМОТРА СООБЩЕНИЙ ОТ ПОЛЬЗОВАТЕЛЯ
+    }
 </div>
 </body>
 </html>

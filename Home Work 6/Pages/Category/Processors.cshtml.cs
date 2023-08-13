@@ -10,9 +10,19 @@ public class Processors : PageModel
     public TemplateData _templateData = new();
 
     ///*******************************************************************************************
+    public Processors()
+    {
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+    }
+
     public void OnGet()
     {
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, 4, 8, 16, 32, "Zen 4", 6000));
     }
 
     public struct TemplateData
@@ -21,7 +31,7 @@ public class Processors : PageModel
         {
         }
 
-        public List<string> _processor_lineup = new()
+        public readonly List<string> ProcessorLineup = new()
         {
             "Athlon",
             "Сore i3 7 поколения",
@@ -75,11 +85,11 @@ public class Processor
     public string Manufacturer = "";
     public string Model = "";
 
-    public Processor(string model, string manufacturer, int numberCores, int numberThreads, float clockFrequency,
-        int cacheMemory1, int cacheMemory2, int cacheMemory3, string architecture, int price)
+    public Processor(string model, string manufacturer, int numberCores, int numberThreads, string clockFrequency,
+        int cacheMemory1, int cacheMemory2, int cacheMemory3, string architecture, string price, string processorline)
     {
         _specifications = new Specifications(numberCores, numberThreads, clockFrequency, cacheMemory1, cacheMemory2,
-            cacheMemory3, architecture, price);
+            cacheMemory3, architecture, price, processorline);
         Model = model;
         Manufacturer = manufacturer;
     }
@@ -90,9 +100,10 @@ public class Processor
     {
         public int NumberCores = 0;
         public int NumberThreads = 0;
-        public float ClockFrequency = 0;
+        public string ClockFrequency = "0";
         public string Architecture = "";
-        public int Price = 0;
+        public string Price = "0";
+        public string ProcessorLine = "";
         public CacheMemory cacheMemory { get; set; }
 
         public struct CacheMemory
@@ -109,8 +120,8 @@ public class Processor
             }
         }
 
-        public Specifications(int numberCores, int numberThreads, float clockFrequency, int cacheMemory1,
-            int cacheMemory2, int cacheMemory3, string architecture, int price)
+        public Specifications(int numberCores, int numberThreads, string clockFrequency, int cacheMemory1,
+            int cacheMemory2, int cacheMemory3, string architecture, string price, string processorLine)
         {
             cacheMemory = new CacheMemory(cacheMemory1, cacheMemory2, cacheMemory3);
             NumberCores = numberCores;
@@ -118,6 +129,7 @@ public class Processor
             ClockFrequency = clockFrequency;
             Architecture = architecture;
             Price = price;
+            ProcessorLine = processorLine;
         }
     }
 }
