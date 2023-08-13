@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 100px;
+}
+
+.cont header {
+    color: cornflowerblue;
+    font-size: 30px;
+    font-family: "Segoe UI", serif;
+    align-self: center;
+}
+
+.cont main div, h2, ul {
+    color: white;
+    margin: 20px 70px;
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
+}
+
+.cont main h2 {
+    font-size: 30px;
+}
+
+.cont ul li {
+    margin-top: 40px;
+}
+
+.cont ul li b {
+    margin-right: 10px;
+}

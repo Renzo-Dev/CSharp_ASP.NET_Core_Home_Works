@@ -12,13 +12,19 @@ public class Processors : PageModel
     ///*******************************************************************************************
     public Processors()
     {
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 4", "6000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 3", "8000", "Ryzen 7"));
+        _Processors.Add(
+            new Processor("AMD Ryzen 5 5600x", "AMD", 6, 12, "4.6", 32, 32, 512, "Zen 3", "6000", "Ryzen 5"));
+        _Processors.Add(new Processor("Core i5 12400F", "Intel", 6, 12, "4.4", 32, 32, 512, "Alder Lake", "5000",
+            "Core i5 12 поколения"));
+        _Processors.Add(new Processor("Core i7 13700", "Intel", 16, 24, "5.6", 24, 24, 30, "Raptor Lake", "15000",
+            "Core i7 13 поколения"));
+        _Processors.Add(new Processor("AMD Ryzen Threadripper 3955WX", "AMD", 16, 32, "4.5", 10, 81, 64, "Threadripper",
+            "32000", "Core i7 13 поколения"));
+        _Processors.Add(new Processor("Intel Intel Core i9-13900KS", "Intel", 24, 32, "4", 10, 24, 36, "Raptor Lake",
+            "23000", "Core i9 13 поколения"));
+        _Processors.Add(new Processor("Intel Core i3-10105", "AMD", 4, 8, "4.4", 2, 4, 6, "Comet Lake", "4000",
+            "Core i3 10 поколения"));
     }
 
     public void OnGet()

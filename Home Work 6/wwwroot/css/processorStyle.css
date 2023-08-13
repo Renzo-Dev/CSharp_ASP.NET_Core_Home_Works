@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 body, html {
@@ -40,6 +41,10 @@ body, html {
     text-decoration: none;
 }
 
+.processor__info a:hover {
+    color: cornflowerblue;
+}
+
 .processor__info div {
     font-size: 20px;
     font-family: Calibri, serif;
@@ -61,13 +66,17 @@ body, html {
     left: 10px;
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    height: 83vh;
+    max-height: 1000px;
     width: fit-content;
-    max-width: 250px;
+    max-width: 260px;
     color: white;
-    border: 1px solid #2f2f2f;
+    border: 1px solid #8d8d8d;
     border-radius: 10px;
     padding: 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .filter__panel__container ul {
@@ -82,12 +91,14 @@ body, html {
     text-align: left;
 }
 
+
 .info__wrapper ul li {
     font-size: 20px;
     margin-left: 5px;
     font-family: Calibri, serif;
     white-space: nowrap;
 }
+
 
 .info__wrapper ul li span {
     margin-left: 5px;
@@ -100,9 +111,13 @@ body, html {
     margin: 10px;
 }
 
-.filter__panel__container .info__wrapper:nth-child(n+2):nth-child(-n+5) ul {
+.info__wrapper:nth-child(3) ul {
+    height: 400px;
+    min-height: 350px;
+}
+
+.info__wrapper:nth-child(n+2):nth-child(-n+5) ul {
     height: 150px;
-    max-height: 150px;
     overflow: auto;
 }
 
@@ -117,26 +132,6 @@ body, html {
 }
 
 .price span:last-child {
-    font-size: 30px;
-}
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
-::-webkit-scrollbar-button {
-    display: none;
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
 }
