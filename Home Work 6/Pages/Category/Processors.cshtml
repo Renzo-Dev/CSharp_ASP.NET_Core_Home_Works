@@ -67,8 +67,10 @@
                 <a href="Processor?">
                     <div>Процессор: @processor.Model</div>
                 </a>
+                <div class="manufacturer" hidden="hidden">@processor.Manufacturer</div>
+                <div class="socket" hidden="hidden">@processor._specifications.Socket</div>
                 <div>Тип: Процессор</div>
-                <div>Линейка процессора:<span>@processor._specifications.ProcessorLine</span></div>
+                <div>Линейка процессора:<span class="processorLine">@processor._specifications.ProcessorLine</span></div>
                 <div>Архитектура: <span>@processor._specifications.Architecture</span></div>
                 <div>Сокет процессора: <span>@processor._specifications.Architecture</span></div>
                 <div>Базовая чистота, ГГц: <span>@processor._specifications.ClockFrequency</span></div>
@@ -80,5 +82,6 @@
         </div>
     }
 </div>
+<script src="scripts/filter.js"></script>
 </body>
 </html>

@@ -12,19 +12,19 @@ public class Processors : PageModel
     ///*******************************************************************************************
     public Processors()
     {
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 3", "8000", "Ryzen 7"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 3", "8000", "Ryzen 7","AM4"));
         _Processors.Add(
-            new Processor("AMD Ryzen 5 5600x", "AMD", 6, 12, "4.6", 32, 32, 512, "Zen 3", "6000", "Ryzen 5"));
-        _Processors.Add(new Processor("Core i5 12400F", "Intel", 6, 12, "4.4", 32, 32, 512, "Alder Lake", "5000",
-            "Core i5 12 поколения"));
-        _Processors.Add(new Processor("Core i7 13700", "Intel", 16, 24, "5.6", 24, 24, 30, "Raptor Lake", "15000",
-            "Core i7 13 поколения"));
+            new Processor("AMD Ryzen 5 5600x", "AMD", 6, 12, "4.6", 32, 32, 512, "Zen 3", "6000", "Ryzen 5","AM4"));
+        _Processors.Add(new Processor("Intel Core i5 12400F", "Intel", 6, 12, "4.4", 32, 32, 512, "Alder Lake", "5000",
+            "i5 12 поколения","LGA 1700"));
+        _Processors.Add(new Processor("Intel Core i7 13700", "Intel", 16, 24, "5.6", 24, 24, 30, "Raptor Lake", "15000",
+            "i7 13 поколения","LGA 1700"));
         _Processors.Add(new Processor("AMD Ryzen Threadripper 3955WX", "AMD", 16, 32, "4.5", 10, 81, 64, "Threadripper",
-            "32000", "Core i7 13 поколения"));
+            "32000", "Ryzen Threadripper","sWRX8"));
         _Processors.Add(new Processor("Intel Intel Core i9-13900KS", "Intel", 24, 32, "4", 10, 24, 36, "Raptor Lake",
-            "23000", "Core i9 13 поколения"));
-        _Processors.Add(new Processor("Intel Core i3-10105", "AMD", 4, 8, "4.4", 2, 4, 6, "Comet Lake", "4000",
-            "Core i3 10 поколения"));
+            "23000", "Сore i9 13 поколения","LGA 1700"));
+        _Processors.Add(new Processor("Intel Core i3-10105", "Intel", 4, 8, "4.4", 2, 4, 6, "Comet Lake", "4000",
+            "Сore i3 10 поколения","LGA 1200"));
     }
 
     public void OnGet()
@@ -81,7 +81,8 @@ public class Processors : PageModel
             "LGA 1700",
             "Socket TRX4",
             "TR4",
-            "PGA988"
+            "PGA988",
+            "sWRX8"
         };
     }
 }
@@ -92,10 +93,10 @@ public class Processor
     public string Model = "";
 
     public Processor(string model, string manufacturer, int numberCores, int numberThreads, string clockFrequency,
-        int cacheMemory1, int cacheMemory2, int cacheMemory3, string architecture, string price, string processorline)
+        int cacheMemory1, int cacheMemory2, int cacheMemory3, string architecture, string price, string processorline,string socket)
     {
         _specifications = new Specifications(numberCores, numberThreads, clockFrequency, cacheMemory1, cacheMemory2,
-            cacheMemory3, architecture, price, processorline);
+            cacheMemory3, architecture, price, processorline,socket);
         Model = model;
         Manufacturer = manufacturer;
     }
@@ -110,6 +111,7 @@ public class Processor
         public string Architecture = "";
         public string Price = "0";
         public string ProcessorLine = "";
+        public string Socket = "";
         public CacheMemory cacheMemory { get; set; }
 
         public struct CacheMemory
@@ -127,7 +129,7 @@ public class Processor
         }
 
         public Specifications(int numberCores, int numberThreads, string clockFrequency, int cacheMemory1,
-            int cacheMemory2, int cacheMemory3, string architecture, string price, string processorLine)
+            int cacheMemory2, int cacheMemory3, string architecture, string price, string processorLine, string socket)
         {
             cacheMemory = new CacheMemory(cacheMemory1, cacheMemory2, cacheMemory3);
             NumberCores = numberCores;
@@ -136,6 +138,7 @@ public class Processor
             Architecture = architecture;
             Price = price;
             ProcessorLine = processorLine;
+            Socket = socket;
         }
     }
 }
