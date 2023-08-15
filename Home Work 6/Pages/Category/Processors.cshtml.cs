@@ -12,26 +12,32 @@ public class Processors : PageModel
     ///*******************************************************************************************
     public Processors()
     {
-        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 3", "8000", "Ryzen 7","AM4"));
+        _Processors.Add(new Processor("AMD Ryzen 7 5800x", "AMD", 8, 16, "4.4", 8, 16, 32, "Zen 3", "8000", "Ryzen 7",
+            "AM4"));
         _Processors.Add(
-            new Processor("AMD Ryzen 5 5600x", "AMD", 6, 12, "4.6", 32, 32, 512, "Zen 3", "6000", "Ryzen 5","AM4"));
+            new Processor("AMD Ryzen 5 5600x", "AMD", 6, 12, "4.6", 32, 32, 512, "Zen 3", "6000", "Ryzen 5", "AM4"));
         _Processors.Add(new Processor("Intel Core i5 12400F", "Intel", 6, 12, "4.4", 32, 32, 512, "Alder Lake", "5000",
-            "i5 12 поколения","LGA 1700"));
+            "i5 12 поколения", "LGA 1700"));
         _Processors.Add(new Processor("Intel Core i7 13700", "Intel", 16, 24, "5.6", 24, 24, 30, "Raptor Lake", "15000",
-            "i7 13 поколения","LGA 1700"));
+            "i7 13 поколения", "LGA 1700"));
         _Processors.Add(new Processor("AMD Ryzen Threadripper 3955WX", "AMD", 16, 32, "4.5", 10, 81, 64, "Threadripper",
-            "32000", "Ryzen Threadripper","sWRX8"));
+            "32000", "Ryzen Threadripper", "sWRX8"));
         _Processors.Add(new Processor("Intel Intel Core i9-13900KS", "Intel", 24, 32, "4", 10, 24, 36, "Raptor Lake",
-            "23000", "Сore i9 13 поколения","LGA 1700"));
+            "23000", "Сore i9 13 поколения", "LGA 1700"));
         _Processors.Add(new Processor("Intel Core i3-10105", "Intel", 4, 8, "4.4", 2, 4, 6, "Comet Lake", "4000",
-            "Сore i3 10 поколения","LGA 1200"));
+            "Сore i3 10 поколения", "LGA 1200"));
     }
 
     public void OnGet()
     {
     }
 
-    public struct TemplateData
+    public void OnGetByName(string name)
+    {
+        Console.Write("WORK");
+    }
+
+public struct TemplateData
     {
         public TemplateData()
         {
