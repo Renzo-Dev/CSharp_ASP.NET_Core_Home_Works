@@ -1,4 +1,4 @@
-window.addEventListener('load',()=> {
+window.addEventListener('load', () => {
     // получаем список продуктов
     const products = document.querySelectorAll(".show__processor__container");
     // панелька фильтра
@@ -10,19 +10,17 @@ window.addEventListener('load',()=> {
 
     checkboxes.forEach((chBox, index) => {
         chBox.addEventListener('change', () => {
-            setFilter(chBox,index,filter_names,filters,products);
+            setFilter(chBox, index, filter_names, filters, products);
         });
     });
 
     // добавляем activeCheckBox в фильтр
-    function setFilter(chBox,_index,filter_names, filters, products) {
+    function setFilter(chBox, _index, filter_names, filters, products) {
         if (chBox.checked) {
             filters.push(filter_names[_index].textContent);
-            console.log(filters)
         } else {
             filters.splice(filters.indexOf(filter_names[_index].textContent), 1);
         }
-        
         // делаем новый список продуктов по фильтру
         renderProducts(filters, products);
     }
@@ -34,16 +32,16 @@ window.addEventListener('load',()=> {
         }
 
         if (filters.length > 0) {
-            filters.forEach(filter=>{
-                products.forEach(product=>{
-                    if (filter.toLowerCase() === product.querySelector(".socket").textContent.toLowerCase() || filter.toLowerCase() === product.querySelector(".manufacturer").textContent.toLowerCase() 
+            filters.forEach(filter => {
+                products.forEach(product => {
+                    if (filter.toLowerCase() === product.querySelector(".socket").textContent.toLowerCase() || filter.toLowerCase() === product.querySelector(".manufacturer").textContent.toLowerCase()
                         || filter.toLowerCase() === product.querySelector(".processorLine").textContent.toLowerCase()) {
                         product__container.appendChild(product);
                     }
                 })
             })
         } else {
-            products.forEach(product=>{
+            products.forEach(product => {
                 product__container.appendChild(product);
             })
         }

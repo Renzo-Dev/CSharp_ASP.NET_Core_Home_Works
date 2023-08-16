@@ -32,7 +32,7 @@
     <div class="info__wrapper">
         <header class="header">Сокет процессора</header>
         <ul>
-            @foreach (var socket in Model._templateData._sockets)
+            @foreach (var socket in Model.ProcessorStruct._templateData._sockets)
             {
                 <li>
                     <input type="checkbox">
@@ -44,7 +44,7 @@
     <div class="info__wrapper">
         <header class="header">Линейка</header>
         <ul>
-            @foreach (var socket in Model._templateData.ProcessorLineup)
+            @foreach (var socket in Model.ProcessorStruct._templateData.ProcessorLineup)
             {
                 <li>
                     <input type="checkbox">
@@ -55,7 +55,7 @@
     </div>
 </div>
 <div class="products__container">
-    @foreach (var processor in Model._Processors)
+    @foreach (var processor in Model.ProcessorStruct._Processors)
     {
         <div class="show__processor__container">
             @{
@@ -64,7 +64,7 @@
             }
             <img src="/Images/Processors/@tmp" height="200px" width="200px" alt="@processor.Model">
             <div class="processor__info">
-                <a href="/Product?type=processor&name=@processor.Model">
+                <a href="/ProcessorDetails?processor&name=@processor.Model">
                     <div>Процессор: @processor.Model</div>
                 </a>
                 <div class="manufacturer" hidden="hidden">@processor.Manufacturer</div>

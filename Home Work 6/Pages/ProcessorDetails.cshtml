@@ -1,0 +1,40 @@
+@page "/ProcessorDetails"
+@model Home_Work_6.Pages.ProcessorDetails
+
+@{
+    Layout = "_Layout";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        @{
+            var tmp = Model.Processor.Model;
+            tmp = tmp + ".png";
+        }
+        <img src="/Images/Processors/@tmp" height="200px" width="200px" alt="@Model.Processor.Model">
+    </div>
+    <div>
+        <div>Модель: <span>@Model.Processor.Model</span></div>
+        <div>Производитель: <span>@Model.Processor.Manufacturer</span></div>
+        <div>Линейка процессора:<span>@Model.Processor._specifications.ProcessorLine</span></div>
+        <div>Архитектура: <span>@Model.Processor._specifications.Architecture</span></div>
+        <div>Сокет: <span>@Model.Processor._specifications.Socket.</span></div>
+        <div>Базовая чистота, ГГц:<span>@Model.Processor._specifications.ClockFrequency</span></div>
+        <div>Количество ядер:<span>@Model.Processor._specifications.NumberCores</span></div>
+        <div>Количество потоков:<span>@Model.Processor._specifications.NumberThreads</span></div>
+        <div>Кеш 1 lvl:<span>@Model.Processor._specifications.cacheMemory.CacheMemory1</span></div>
+        <div>Кеш 2 lvl:<span>@Model.Processor._specifications.cacheMemory.CacheMemory2</span></div>
+        <div>Кеш 3 lvl:<span>@Model.Processor._specifications.cacheMemory.CacheMemory3</span></div>
+    </div>
+</div>
+</body>
+</html>
