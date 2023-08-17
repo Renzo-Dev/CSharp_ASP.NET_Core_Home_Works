@@ -55,6 +55,10 @@
     </div>
 </div>
 <div class="products__container">
+    <select id="sortingSelect">
+        <option value="asc">От дешевых</option>
+        <option value="desc">От дорогих</option>
+    </select>
     @foreach (var processor in Model.ProcessorStruct._Processors)
     {
         <div class="show__processor__container">
@@ -77,7 +81,8 @@
             </div>
             <div class="price">
                 <span>Цена:</span>
-                <span >@processor._specifications.Price грн</span>
+                <span >@processor._specifications.Price</span>
+                <span>грн</span>
             </div>
         </div>
     }

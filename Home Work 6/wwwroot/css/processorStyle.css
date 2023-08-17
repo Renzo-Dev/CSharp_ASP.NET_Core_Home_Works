@@ -11,9 +11,23 @@ body, html {
 }
 
 .products__container {
-    margin: 100px 20px 20px 200px;
+    margin-left: 200px;
     width: 70%;
     height: 80vh;
+}
+
+#sortingSelect {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    margin-right: 15px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #292929;
+    color: white;
+    border: 1px solid white;
+    outline: none;
 }
 
 .show__processor__container {
@@ -131,7 +145,12 @@ body, html {
     font-family: "Segoe UI", serif;
 }
 
-.price span:last-child {
+.price span:nth-child(2) {
     font-size: 25px;
+    font-family: "Segoe UI", serif;
+}
+
+.price span:last-child {
+    font-size: 20px;
     font-family: "Segoe UI", serif;
 }
