@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     document.getElementById('sortingSelect').addEventListener('change', () => {
         renderProducts();
     });
-    
+
     // функция сортировки по выбору ( от меньшего , от большего )
     function ProductSorted(products = []) {
         const selectedValue = document.getElementById('sortingSelect').value;
@@ -25,8 +25,9 @@ window.addEventListener('load', () => {
                 return priceB - priceA;
             }
         });
-               
+
     }
+
     // функция фильтрации по выбору ( checkboxes )
     function ProductFilters(products = []) {
         // получаем массив checkboxes
@@ -43,7 +44,7 @@ window.addEventListener('load', () => {
         })
         if (filters.length > 0) {
             let newProducts = [];
-            filters.forEach((filter) => {      
+            filters.forEach((filter) => {
                 products.forEach(product => {
                     if (
                         filter.toLowerCase() === product.querySelector(".socket").textContent.toLowerCase() ||
@@ -58,6 +59,7 @@ window.addEventListener('load', () => {
             products.push(...newProducts);
         }
     }
+
     // функция рендеринга продуктов
     function renderProducts() {
 

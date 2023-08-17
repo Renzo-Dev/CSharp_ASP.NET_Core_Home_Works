@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    display: inline-block;
+}
+
+.container {
+    margin-left: 50px;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-info, .text-info-details {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    border: 1px solid white;
+    margin-left: 40px;
+    padding: 10px;
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+    border-radius: 7px;
+}
+
+.text-info div, .text-info-details div {
+    margin: 20px
+}

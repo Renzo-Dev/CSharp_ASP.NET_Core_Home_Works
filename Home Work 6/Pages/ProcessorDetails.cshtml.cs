@@ -8,7 +8,7 @@ public class ProcessorDetails : PageModel
 
     public void OnGet(string name)
     {
-        var tmp = new ProcessorStruct();
-        Processor = new Processor(tmp.GetProcessorDetails(name));
+        var processors = new ProcessorStruct();
+        Processor = new Processor(processors.GetProcessorDetails(name));
     }
 }
