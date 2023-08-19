@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-
     // получаем исходный список продуктов ( без последующих обращений к серверу, только если перезагрузим страницу )
     const SourceProducts = document.querySelectorAll(".show__processor__container");
 

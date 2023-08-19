@@ -15,6 +15,7 @@ html, body {
 }
 
 .top__panel {
+    z-index: 150;
     align-self: start;
     width: 100%;
     max-width: 100%;

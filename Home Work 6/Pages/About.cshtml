@@ -16,7 +16,15 @@
 </head>
 <body>
 <div class="cont">
+    <button id="message__for__moderator">Отправить сообщение модератору</button>
     <header>Добро пожаловать в наш Магазин Комплектующих ПК!</header>
+    <div class="modal-content">
+        <textarea class="modal__text" placeholder="Введите текст" type="text"></textarea>
+        <div class="buttons__container">
+            <input class="modal-bth-submit" type="button" value="Отправить">
+            <input class="modal-bth-close" type="button" value="Закрыть">
+        </div>
+    </div>
     <main>
         <div>
             Мы рады приветствовать вас на странице "О нас", где вы узнаете больше о том,кто мы и что делаем.
@@ -58,5 +66,6 @@
         2023&COPY;
     </footer>
 </div>
+<script src="scripts/MessageModerator.js"></script>
 </body>
 </html>
