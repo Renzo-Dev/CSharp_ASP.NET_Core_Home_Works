@@ -12,6 +12,6 @@ public class Message
         author = aut;
     }
 
-    public string message { get; set; }
-    public string author { get; set; }
+    public string? message { get; set; }
+    public string? author { get; set; }
 }
