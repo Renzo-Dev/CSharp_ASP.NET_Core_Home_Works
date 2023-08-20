@@ -13,21 +13,39 @@ window.addEventListener('load', () => {
         wModel.style.display = 'none';
     });
 
-    const ModelButtonSubmit = document.querySelector(".modal-bth-submit");
-    ModelButtonSubmit.addEventListener('click', () => {
+    const ModelButtonSubmit = document.querySelector(".modal-bth-submit ");
+    ModelButtonSubmit.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Сообщение для отправки
         const message = document.querySelector(".modal__text").value;
-        // const author = document.querySelector()
-        if (message.length > 0) {
+        // Автор сообщения
+        const author = document.querySelector(".modal__author").value;
 
-            // // сообщение для отправки
-            // const message = document.getElementById();
-            // // отправляем сообщение для модератора серверу
-            // const repsonse = fetch('/',{
-            //     method: "POST",
-            //     body: JSON.stringify({
-            //         message: 
-            //     })
-            // });
+        if (message.length > 0 && author.length > 0) {
+
+            responseMessage(message, author);
         }
     });
+
+    async function responseMessage(message, author) {
+        // отправляем сообщение для модератора серверу
+        const url = '/MessagesModerator'; // Путь к вашей Razor Page
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                message: message,
+                author: author
+            })
+        });
+        if (response.ok) {
+            window.alert("Сообщение отправлено");
+            document.querySelector(".modal-content").style.display = 'none';
+        } else {
+            window.alert("Ошибка отправки сообщения");
+        }
+    }
 });
