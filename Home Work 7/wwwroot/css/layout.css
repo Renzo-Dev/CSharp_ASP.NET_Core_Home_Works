@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+}
+
+html, body {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.top__bar__panel {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    background: #919191;
+    width: 100%;
+    height: fit-content;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+.top__bar__panel > a {
+    text-align: center;
+    flex-basis: fit-content;
+    color: white;
+    padding: 5px;
+    font-family: "Segoe UI", fantasy;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1vw;
+    transition: 200ms color ease-in;
+}
+
+.top__bar__panel > a:nth-child(1) {
+    margin-right: 20px;
+    margin-left: 20px;
+    flex-basis: 200px;
+}
+
+.top__bar__panel > a:nth-child(2) {
+    flex-basis: 200px;
+}
+
+.top__bar__panel > a:nth-child(3) {
+    flex-basis: 200px;
+}
+
+.top__bar__panel > a:nth-child(4) {
+    margin-right: 20px;
+    margin-left: 20px;
+    flex-basis: 200px;
+}
+
+.top__bar__panel > a:hover {
+    color: #787878;
+}
