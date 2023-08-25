@@ -1,0 +1,29 @@
+@page
+@model Home_Work_5.Pages.Registration
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body class="background__color">
+<form class="registration__form" autocomplete="off">
+    <div class="title_Reg">Регистрация</div>
+    <label for="login">Введите логин <span id="error_login" class="Error_Message"> </span></label>
+    <input type="text" id="login" name="login_">
+    <label for="password">Введите пароль<span id="error_password" class="Error_Message"> </span></label>
+    <input type="password" id="password" name="password_">
+    <div class="password-strength" id="passwordStrength"></div>
+    <label for="email">Введите почту<span id="error_email" class="Error_Message"></span></label>
+    <input type="text" id="email" name="email_">
+    <input value="Зарегистрировать" type="button" id="registration__button">
+</form>
+<script src="scripts/Validator.js"></script>
+<script src="scripts/registration_Validation.js"></script>
+</body>
+</html>

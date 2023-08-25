@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+}
+
+.top__bar__panel{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.top__bar__panel a {
+    text-align: center;
+    flex-basis: 200px;
+    margin: 0 50px;
+    color: white;
+    text-decoration: none;
+    font-family: "Segoe UI", serif;
+    font-size: 22px;
+    transition: color 200ms ease-in;
+}
+
+.top__bar__panel a:hover {
+    color: #4c8fcf;
+}
