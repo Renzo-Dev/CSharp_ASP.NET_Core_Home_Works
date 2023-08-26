@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    user-select: none;
+    height: 100%;
+    background: #110f23;
+}
+
+.book__table__container {
+    background: #151347;
+    width: fit-content;
+    max-width: 1000px;
+    height: 60vh;
+    min-height: 400px;
+    margin: 50px auto;
+    overflow: auto;
+}
+
+.book__table__container table {
+    color: white;
+    padding: 0 15px 15px;
+    border-collapse: separate;
+}
+
+.book__table__container td > button {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.book__table__container th {
+    background: #110f23;
+    padding: 15px;
+    font-size: 23px;
+    font-family: "Arial", serif;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+
+.book__table__container td:not(:nth-child(3),:nth-child(4),:nth-child(5)) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+}
+
+.book__table__container td {
+    width: 200px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: "Segoe UI", serif;
+}
+
+.book__table__container td:nth-child(3) {
+    text-align: center;
+}
+
+.book__table__container th:not(:nth-child(3)) {
+    text-align: left;
+}
+
+.book__table__container th:last-child {
+    text-align: center;
+}
+
+.book__table__container th:last-child > input {
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: "Segoe UI", serif;
+    transition: 300ms all ease-out;
+}
+
+.book__table__container th:last-child > input:hover {
+    color: #8c8c8c;
+}
+
+
+.book__table__container th:last-child > input:active {
+    color: #2e2b86;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}

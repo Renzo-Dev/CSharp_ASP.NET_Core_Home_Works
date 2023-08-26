@@ -1,0 +1,47 @@
+@page
+@using Home_Work_7
+@model Home_Work_7.Pages.Book_Management
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Management</title>
+    <link href="css/BookManagement.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="book__table__container">
+    <table>
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Год</th>
+            <th colspan="2">
+                <input type="button" id="bAddNewBook" value="Добавить новую книгу"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var t in Books.books)
+        {
+            <tr>
+                <td title="@t.Title">@t.Title</td>
+                <td>@t.Author</td>
+                <td>@Convert.ToString(t.PublicationYear)</td>
+                <td>
+                    <button id="editB" name="editB">Изменить</button>
+                </td>
+                <td>
+                    <button id="deleteB" name="deleteB">Удалить</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+<script src="scripts/BookManagement.js"></script>
+</body>
+</html>
