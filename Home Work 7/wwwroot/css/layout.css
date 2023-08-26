@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html,body {
+html, body {
     height: 100%;
 }
 
-.top__bar__panel{
+.top__bar__panel {
     padding-top: 10px;
     display: flex;
     flex-direction: row;

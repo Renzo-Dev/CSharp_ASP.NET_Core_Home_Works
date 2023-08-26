@@ -1,6 +1,6 @@
 @page "/book"
-@using Home_Work_5
-@model Home_Work_5.Pages.bookPage
+@using Home_Work_7
+@model Home_Work_7.Pages.bookPage
 
 <!doctype html>
 <html lang="en">
@@ -15,24 +15,24 @@
 <div class="book__content">
     <div class="book__Title">
         <span>Название Книги:</span>
-        <span>@Book.books[Model.id].Title</span>
+        <span>@Books.books[Model.id].Title</span>
     </div>
     <main>
         <div class="book__Author">
             <span>Автор:</span>
-            <span>@Book.books[Model.id].Author</span>
+            <span>@Books.books[Model.id].Author</span>
         </div>
         <div class="book__Genre">
             <span>Стиль:</span>
-            <span>@Book.books[Model.id].Genre</span>
+            <span>@Books.books[Model.id].Genre</span>
         </div>
         <div class="book__Publisher">
             <span>Издатель:</span>
-            <span>@Book.books[Model.id].Publisher</span>
+            <span>@Books.books[Model.id].Publisher</span>
         </div>
         <div class="book__PublicationYear">
             <span>Год Издания:</span>
-            <span>@Book.books[Model.id].PublicationYear.ToString()</span>
+            <span>@Books.books[Model.id].PublicationYear.ToString()</span>
         </div>
     </main>
     <a href="/">Назад в библиотеку</a>

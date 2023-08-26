@@ -1,6 +1,6 @@
 @page
-@using Home_Work_5
-@model Home_Work_5.Pages.Index
+@using Home_Work_7
+@model Home_Work_7.Pages.Index
 
 @{
     Layout = "_Layout";
@@ -19,21 +19,24 @@
 <div class="content">
     <aside class="filter__panel">
         <div>Год Издания</div>
-        <input type="number" value="0" placeholder="От">
-        <input type="number" value="2023" placeholder="До">
+        <input id="fYearFrom" type="number" value="@Convert.ToString(Model.YearFrom)" placeholder="От">
+        <input id="fYearTo" type="number" value="@Convert.ToString(Model.YearTo)" placeholder="До">
     </aside>
     <span class="header__books">Книги</span>
     <main class="books__library__container">
-        @for (var i = 0; i < Book.books.Count; i++)
+        @for (var i = 0; i < Books.books.Count; i++)
         {
-            <a href="/book?id=@i" class="book__wrapper">
-                <span class="book__name" name="book__name" title="@Book.books[i].Title">Название: @Book.books[i].Title</span>
-                <span class="book__Author" title="@Book.books[i].Author">Автор: @Book.books[i].Author</span>
-                <span class="book__publicationYear" title="@Book.books[i].Publisher">Год издания: @Book.books[i].PublicationYear.ToString()</span>
-            </a>
+            if (Books.books[i].PublicationYear >= Model.YearFrom && Books.books[i].PublicationYear <= Model.YearTo)
+            {
+                <a href="/book?id=@i" class="book__wrapper">
+                    <span class="book__name" name="book__name" title="@Books.books[i].Title">Название: @Books.books[i].Title</span>
+                    <span class="book__Author" title="@Books.books[i].Author">Автор: @Books.books[i].Author</span>
+                    <span class="book__publicationYear" title="@Books.books[i].Publisher">Год издания: @Books.books[i].PublicationYear.ToString()</span>
+                </a>
+            }
         }
     </main>
 </div>
-<script src="js/filter.js"></script>
+<script src="scripts/filter.js"></script>
 </body>
 </html>

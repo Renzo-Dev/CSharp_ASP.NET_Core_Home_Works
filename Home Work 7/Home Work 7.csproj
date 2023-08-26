@@ -8,10 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Pages\bookPage.cshtml" />
-      <AdditionalFiles Include="Pages\index.cshtml" />
+        <AdditionalFiles Include="Pages\bookPage.cshtml"/>
+        <AdditionalFiles Include="Pages\index.cshtml"/>
     </ItemGroup>
-
 
 
 </Project>

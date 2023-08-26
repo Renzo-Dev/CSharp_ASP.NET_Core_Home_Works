@@ -1,0 +1,122 @@
+body, html,
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+.background__color {
+    background: #110f23;
+    color: white;
+    height: 100vh;
+}
+
+.registration__form {
+    margin: 100px auto;
+    background: #14112a;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 450px;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.registration__form > input {
+    color: white;
+    height: 40px;
+    font-size: 17px;
+    background: #1c1e1f;
+    border: 2px solid #786f63;
+    border-radius: 7px;
+    font-family: "Segoe UI", serif;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.registration__form > label {
+    margin-top: 10px;
+    text-align: left;
+    font-family: "Segoe UI", serif;
+    font-weight: 600;
+}
+
+.Error_Message {
+    font-size: 15px;
+    color: red;
+    font-weight: 300;
+    user-select: none;
+    font-family: "Cascadia Mono", serif;
+    margin-left: 30px;
+}
+
+.title_Reg {
+    font-family: "Segoe UI", serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e9055a;
+}
+
+::placeholder {
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.haveAccount {
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Segoe UI", serif;
+}
+
+#registration__button {
+    background: #bc0448;
+    border: none;
+    width: 230px;
+    height: 60px;
+    margin-top: 30px;
+    align-self: center;
+    border-radius: 10px;
+    font-family: "Segoe UI", serif;
+    font-size: 20px;
+    color: white;
+}
+
+#registration__button:hover {
+    color: #2c2c33;
+}
+
+#registration__button:active {
+    background: #810436;
+}
+
+.haveAccount > a {
+    margin-left: 10px;
+    color: white;
+}
+
+.password-strength {
+    border-radius: 15px;
+    height: 5px;
+    margin-top: 10px;
+    width: 0;
+    transition: width 0.3s;
+}
+
+.weak {
+    background-color: red;
+}
+
+.medium {
+    background-color: orange;
+}
+
+.strong {
+    background-color: green;
+}

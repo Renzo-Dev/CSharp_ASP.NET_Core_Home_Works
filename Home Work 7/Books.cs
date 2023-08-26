@@ -1,10 +1,10 @@
-namespace Home_Work_5;
+namespace Home_Work_7;
 
-public class Book
+public class Books
 {
-    public static List<Book> books = new()
+    public static List<Books> books = new()
     {
-        new Book
+        new Books
         {
             Author = "Леся Українка",
             Genre = "Поезія",
@@ -12,7 +12,7 @@ public class Book
             Publisher = "Київ",
             Title = "Лісова пісня"
         },
-        new Book
+        new Books
         {
             Author = "Іван Франко",
             Genre = "Роман",
@@ -20,7 +20,7 @@ public class Book
             Publisher = "Львів",
             Title = "Захар Беркут"
         },
-        new Book
+        new Books
         {
             Author = "Михайло Коцюбинський",
             Genre = "Повість",
@@ -28,7 +28,7 @@ public class Book
             Publisher = "Львів",
             Title = "Тіні забутих предків"
         },
-        new Book
+        new Books
         {
             Title = "Война и мир",
             Author = "Лев Толстой",
@@ -36,7 +36,7 @@ public class Book
             Publisher = "Русский вестник",
             PublicationYear = 1869
         },
-        new Book
+        new Books
         {
             Title = "Гарри Поттер и философский камень",
             Author = "Джоан Роулинг",
@@ -44,7 +44,7 @@ public class Book
             Publisher = "Розенталь",
             PublicationYear = 1997
         },
-        new Book
+        new Books
         {
             Title = "Преступление и наказание",
             Author = "Фёдор Достоевский",
@@ -52,7 +52,7 @@ public class Book
             Publisher = "Петербургские ведомости",
             PublicationYear = 1866
         },
-        new Book
+        new Books
         {
             Title = "Мастер и Маргарита",
             Author = "Михаил Булгаков",
@@ -60,7 +60,7 @@ public class Book
             Publisher = "Москва",
             PublicationYear = 1967
         },
-        new Book
+        new Books
         {
             Author = "George Orwell",
             Genre = "Dystopian Fiction",
@@ -68,7 +68,7 @@ public class Book
             Publisher = "Secker & Warburg",
             Title = "Nineteen Eighty-Four"
         },
-        new Book
+        new Books
         {
             Author = "J.K. Rowling",
             Genre = "Fantasy",
@@ -76,7 +76,7 @@ public class Book
             Publisher = "Bloomsbury",
             Title = "Harry Potter and the Philosopher's Stone"
         },
-        new Book
+        new Books
         {
             Author = "Jane Austen",
             Genre = "Classic Fiction",
@@ -84,7 +84,7 @@ public class Book
             Publisher = "Thomas Egerton",
             Title = "Pride and Prejudice"
         },
-        new Book
+        new Books
         {
             Author = "J.R.R. Tolkien",
             Genre = "Fantasy",
@@ -92,7 +92,7 @@ public class Book
             Publisher = "Allen & Unwin",
             Title = "The Lord of the Rings"
         },
-        new Book
+        new Books
         {
             Author = "Harper Lee",
             Genre = "Coming-of-age",
