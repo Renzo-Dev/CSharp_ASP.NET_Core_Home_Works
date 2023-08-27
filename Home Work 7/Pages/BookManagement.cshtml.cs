@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Home_Work_7.Pages;
@@ -13,17 +11,14 @@ public class BookManagement : PageModel
 
     public void OnGetDelete(string bookName = "")
     {
-        Console.WriteLine("WORK");
-        if (bookName.Length > 0)
+        if (bookName.Length <= 0) return;
+        for (int i = 0; i < Books.books.Count; i++)
         {
-            for (int i = 0; i < Books.books.Count; i++)
+            Console.WriteLine(i);
+            if (string.Equals(Books.books[i].Title, bookName, StringComparison.CurrentCultureIgnoreCase))
             {
-                Console.WriteLine(i);
-                if (string.Equals(Books.books[i].Title, bookName, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    Books.books.RemoveAt(i);
-                    break;
-                }
+                Books.books.RemoveAt(i);
+                break;
             }
         }
     }

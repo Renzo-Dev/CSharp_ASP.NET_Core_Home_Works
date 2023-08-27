@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // добавляем событие для Button Add New Book
     const AddNewBookButton = document.getElementById('bAddNewBook');
     AddNewBookButton.addEventListener('click', () => {
-        alert("WORk")
+        const form__create__book = document.querySelector('#modal__create__book__form');
+        form__create__book.style.display = 'flex';
     });
+    
+    
+    const MenuCreateNewBookButton = document.querySelector("#bCloseBookCreateMenu");
+    MenuCreateNewBookButton.addEventListener('click',()=>{
+        
+        const form__create__book = document.querySelector('#modal__create__book__form');
+        form__create__book.reset();
+        form__create__book.style.display = 'none';
+    })
 });

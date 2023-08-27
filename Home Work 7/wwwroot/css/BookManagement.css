@@ -77,6 +77,60 @@ html, body {
     transition: 300ms all ease-out;
 }
 
+#modal__create__book__form {
+    color: white;
+    top: -450px;
+    left: 0;
+    margin: 0 auto;
+    display: none;
+    flex-direction: column;
+    position: relative;
+    width: 500px;
+    height: 430px;
+    background: #171541;
+    padding: 20px;
+    border: 3px solid #343434;
+    z-index: 99999;
+    border-radius: 7px;
+    font-family: "Segoe UI", serif;
+}
+
+#modal__create__book__form lable{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#modal__create__book__form  input {
+    color: white;
+    background: #2c2c2c;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#modal__create__book__form > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#modal__create__book__form input[type="button"]{
+    padding: 10px;
+    margin-left: 30px;
+    transition: 300ms background-color ease-out;
+}
+
+#modal__create__book__form input[type="button"]:hover{
+    background: #575757;
+}
+
+#modal__create__book__form input[type="button"]:active{
+    background: #020202;
+    transition: 10ms ease-out;
+}
+
 .book__table__container th:last-child > input:hover {
     color: #8c8c8c;
 }
