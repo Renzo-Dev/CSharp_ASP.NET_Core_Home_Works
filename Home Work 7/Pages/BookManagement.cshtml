@@ -1,6 +1,6 @@
 @page
 @using Home_Work_7
-@model Home_Work_7.Pages.Book_Management
+@model Home_Work_7.Pages.BookManagement
 
 @{
     Layout = "_Layout";
@@ -32,10 +32,10 @@
                 <td>@t.Author</td>
                 <td>@Convert.ToString(t.PublicationYear)</td>
                 <td>
-                    <button id="editB" name="editB">Изменить</button>
+                    <button class="editB" name="editB">Изменить</button>
                 </td>
                 <td>
-                    <button id="deleteB" name="deleteB">Удалить</button>
+                    <button class="deleteB" name="deleteB">Удалить</button>
                 </td>
             </tr>
         }
