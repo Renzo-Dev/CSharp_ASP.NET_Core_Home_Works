@@ -13,7 +13,7 @@ public class Registration : PageModel
 
     public IActionResult OnPost()
     {
-        if (ModelState.IsValid) Users._users.Add(new User(user.login, user.password, user.email));
+        if (ModelState.IsValid) Users._users.Add(user);
         // или сделать страницу ЧТО ВЫ ЗАРЕГИСТРИРОВАНЫ)
         return Page();
     }

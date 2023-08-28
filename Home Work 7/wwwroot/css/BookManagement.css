@@ -54,16 +54,17 @@ html, body {
     font-family: "Segoe UI", serif;
 }
 
-.book__table__container td:nth-child(3) {
+.book__table__container td input {
+    background: transparent;
+    cursor: default;
+}
+
+.book__table__container td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6), th:last-child {
     text-align: center;
 }
 
 .book__table__container th:not(:nth-child(3)) {
     text-align: left;
-}
-
-.book__table__container th:last-child {
-    text-align: center;
 }
 
 .book__table__container th:last-child > input {
@@ -77,7 +78,7 @@ html, body {
     transition: 300ms all ease-out;
 }
 
-#modal__create__book__form {
+.modal__create__book__form {
     color: white;
     top: -450px;
     left: 0;
@@ -95,12 +96,12 @@ html, body {
     font-family: "Segoe UI", serif;
 }
 
-#modal__create__book__form lable{
+.modal__create__book__form lable {
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-#modal__create__book__form  input {
+.modal__create__book__form input, .input__title {
     color: white;
     background: #2c2c2c;
     border: none;
@@ -110,23 +111,23 @@ html, body {
     margin-bottom: 10px;
 }
 
-#modal__create__book__form > div{
+.modal__create__book__form > div {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-#modal__create__book__form input[type="button"]{
+.modal__create__book__form input[type="button"] {
     padding: 10px;
     margin-left: 30px;
     transition: 300ms background-color ease-out;
 }
 
-#modal__create__book__form input[type="button"]:hover{
+.modal__create__book__form input[type="button"]:hover {
     background: #575757;
 }
 
-#modal__create__book__form input[type="button"]:active{
+.modal__create__book__form input[type="button"]:active {
     background: #020202;
     transition: 10ms ease-out;
 }
@@ -134,7 +135,6 @@ html, body {
 .book__table__container th:last-child > input:hover {
     color: #8c8c8c;
 }
-
 
 .book__table__container th:last-child > input:active {
     color: #2e2b86;

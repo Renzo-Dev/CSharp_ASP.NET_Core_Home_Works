@@ -1,4 +1,5 @@
 @page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using Home_Work_7
 @model Home_Work_7.Pages.BookManagement
 
@@ -28,35 +29,40 @@
         @foreach (var t in Books.books)
         {
             <tr>
-                <td title="@t.Title">@t.Title</td>
-                <td>@t.Author</td>
-                <td>@Convert.ToString(t.PublicationYear)</td>
-                <td>
-                    <button class="editB" name="editB">Изменить</button>
-                </td>
-                <td>
-                    <button class="deleteB" name="deleteB">Удалить</button>
-                </td>
+                <form method="POST">
+                    <td>
+                        <input hidden="hidden" name="id" value="@Convert.ToString(t.id)"/>
+                        <input class="input__title" readonly="readonly" title="@t.Title" name="Title" value="@t.Title"/>
+                    </td>
+                    <td>@t.Author</td>
+                    <td>@Convert.ToString(t.PublicationYear)</td>
+                    <td>
+                        <button class="editB">Изменить</button>
+                    </td>
+                    <td>
+                        <button asp-page-handler="DeleteBook" class="deleteB">Удалить</button>
+                    </td>
+                </form>
             </tr>
         }
         </tbody>
     </table>
 </div>
-<form id="modal__create__book__form">
-    <div>Меню создания книги</div>
-    <lable for="book__title">Название Книги</lable>
-    <input id="book__title" name="Title" type="text">
+<form method="POST" class="modal__create__book__form" autocomplete="off">
+    <input id="id" hidden="hidden" name="id" value=""/>
     <lable for="book__author">Автор</lable>
     <input id="book__author" name="Author" type="text">
     <lable for="book__Genre">Стиль</lable>
     <input id="book__Genre" name="Genre" type="text">
-    <lable for="book__Publisher">Издательство</lable>
-    <input id="book__Publisher" name="Publisher" type="text">
     <lable for="book__PublicationYear">Год Издательства</lable>
     <input id="book__PublicationYear" name="PublicationYear" type="number">
+    <lable for="book__Publisher">Издательство</lable>
+    <input id="book__Publisher" name="Publisher" type="text">
+    <lable for="book__title">Название Книги</lable>
+    <input id="book__title" name="Title" type="text">
     <div>
-        <input id="bCreateBook" type="button" value="Создать"/>
-        <input id="bCloseBookCreateMenu" type="button" value="Закрыть"/>
+        <input class="modal_button" type="button" value=""/>
+        <input class="modal_button" type="button" value="Закрыть"/>
     </div>
 </form>
 <script src="scripts/BookManagement.js"></script>
