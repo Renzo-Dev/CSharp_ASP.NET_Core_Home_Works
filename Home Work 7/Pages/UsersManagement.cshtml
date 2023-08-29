@@ -1,5 +1,7 @@
 @page
-@model Home_Work_7.Pages.Users_Management
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Home_Work_7
+@model Home_Work_7.Pages.UsersManagement
 
 @{
     Layout = "_Layout";
@@ -9,10 +11,56 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="css/UserManagement.css"/>
 </head>
 <body>
-<div>
-
+<div class="users__table__container">
+    <table>
+        <thead>
+        <tr>
+            <th>Логин</th>
+            <th>Почта</th>
+            <th colspan="4">
+                <input type="button" id="bAddNewUser" value="Добавить пользователя"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Users._users)
+        {
+            <tr>
+                <form method="POST">
+                    <td>
+                        <input hidden="hidden" name="guid" value="@Convert.ToString(user.guid)"/>
+                        <input class="input__title" readonly="readonly" title="@user.login" name="Title" value="@user.login"/>
+                    </td>
+                    <td>@user.email</td>
+                    <td></td>
+                    <td>
+                        <button class="editU">Изменить</button>
+                    </td>
+                    <td>
+                        <button asp-page-handler="DeleteUser" class="deleteU">Удалить</button>
+                    </td>
+                </form>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
+<form method="post" class="modal__create__user__form" autocomplete="off">
+    <input id="guid" hidden="hidden" name="guid" value=""/>
+    <lable for="user__login">Логин</lable>
+    <input id="user__login" name="login" type="text">
+    <lable for="user__password">Пароль</lable>
+    <input id="user__password" name="password" type="password">
+    <lable for="user__email">Почта</lable>
+    <input id="user__email" name="password" type="email">
+    <div>
+        <input class="modal_button" type="button" value=""/>
+        <input class="modal_button" type="button" value="Закрыть"/>
+    </div>
+</form>
+<script src="scripts/UserManagement.js"></script>
 </body>
 </html>

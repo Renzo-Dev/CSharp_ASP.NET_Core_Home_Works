@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace Home_Work_7.Pages;
 
+[IgnoreAntiforgeryToken]
 public class BookManagement : PageModel
 {
     public void OnGet()
@@ -26,18 +27,48 @@ public class BookManagement : PageModel
         return StatusCode(StatusCodes.Status404NotFound);
     }
 
-    // TEST
+    public async Task<IActionResult> OnPostCreate()
+    {
+        var requestBody = await new StreamReader(Request.Body).ReadToEndAsync();
+        var bookData = JsonConvert.DeserializeObject<Book>(requestBody);
+
+        if (bookData != null)
+        {
+            Books.books.Add(bookData);
+            var result = new { Status = "Книга добавлена в библиотеку" }; // Пример результата
+            return new JsonResult(result);
+        }
+        else
+        {
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            var result = new { Status = "Ошибка , не удалось создать книгу" }; // Пример результата
+            return new JsonResult(result);
+        }
+    }
+
     public async Task<IActionResult> OnPostUpdate()
     {
-        Console.WriteLine("WORK");
         var requestBody = await new StreamReader(Request.Body).ReadToEndAsync();
-        var receivedData = JsonConvert.DeserializeObject<Book>(requestBody);
+        var bookData = JsonConvert.DeserializeObject<Book>(requestBody);
+        if (bookData != null)
+        {
+            var index = Books.books.FindIndex(book => book.id == bookData.id);
+            if (index != -1)
+            {
+                Books.books[index] = bookData;
+                return RedirectToPage();
+            }
 
-        // Обработка receivedData
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            var result = new { Status = "Ошибка , книга не найдена" }; // Пример результата
+            return new JsonResult(result);
+        }
 
-        var result = new { Status = "Success" }; // Пример результата
-
-        return new JsonResult(result);
+        {
+            HttpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            var result = new { Status = "Ошибка , книга не найдена" }; // Пример результата
+            return new JsonResult(result);
+        }
     }
 
     public IActionResult OnPostDeleteBook(int id = 0)

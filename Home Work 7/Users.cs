@@ -4,6 +4,7 @@ public class User
 {
     public User(string login, string password, string email)
     {
+        guid = Guid.NewGuid().ToString();
         this.login = login;
         this.password = password;
         this.email = email;
@@ -13,6 +14,7 @@ public class User
     {
     }
 
+    public string guid { get; set; }
     public string login { get; set; }
     public string password { get; set; }
     public string email { get; set; }
@@ -20,5 +22,8 @@ public class User
 
 public static class Users
 {
-    public static List<User> _users = new();
+    public static List<User> _users = new()
+    {
+        new User("Renzo", "Test", "Test@gmail.com")
+    };
 }
