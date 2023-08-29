@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 1", "Home Work 1\Home Work 1.csproj", "{DE61107F-5F60-483E-A921-F16160AD63CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 1 ASP.Net Core", "Home Work 1 ASP.Net Core\Home Work 1 ASP.Net Core.csproj", "{DE61107F-5F60-483E-A921-F16160AD63CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 2", "Home Work 2\Home Work 2.csproj", "{8D0702BA-601D-44B2-A896-2F3E40325A39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 2 ASP.Net Core", "Home Work 2 ASP.Net Core\Home Work 2 ASP.Net Core.csproj", "{8D0702BA-601D-44B2-A896-2F3E40325A39}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 3", "Home Work 3\Home Work 3.csproj", "{7DC3FA74-6EEF-4C87-9F7B-103AD214C8EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 3 ASP.Net Core", "Home Work 3 ASP.Net Core\Home Work 3 ASP.Net Core.csproj", "{7DC3FA74-6EEF-4C87-9F7B-103AD214C8EC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 4 Razor Page", "Home Work 4 Razor Page\Home Work 4 Razor Page.csproj", "{EC9237BE-95D4-4F4A-AA23-BC03B6EA6C8A}"
 EndProject
