@@ -26,12 +26,13 @@
     <main class="books__library__container">
         @for (var i = 0; i < Books.books.Count; i++)
         {
-            if (Books.books[i].PublicationYear >= Model.YearFrom && Books.books[i].PublicationYear <= Model.YearTo)
+            var book = Books.books[i];
+            if (book.PublicationYear >= Model.YearFrom && book.PublicationYear <= Model.YearTo)
             {
-                <a href="/book?id=@i" class="book__wrapper">
-                    <span class="book__name" name="book__name" title="@Books.books[i].Title">Название: @Books.books[i].Title</span>
-                    <span class="book__Author" title="@Books.books[i].Author">Автор: @Books.books[i].Author</span>
-                    <span class="book__publicationYear" title="@Books.books[i].Publisher">Год издания: @Books.books[i].PublicationYear.ToString()</span>
+                <a href="/book?id=@book.id" class="book__wrapper">
+                    <span class="book__name" title="@book.Title">Название: @book.Title</span>
+                    <span class="book__Author" title="@book.Author">Автор: @book.Author</span>
+                    <span class="book__publicationYear" title="@book.Publisher">Год издания: @book.PublicationYear.ToString()</span>
                 </a>
             }
         }

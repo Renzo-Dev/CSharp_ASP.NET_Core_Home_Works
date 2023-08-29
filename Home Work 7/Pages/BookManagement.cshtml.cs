@@ -1,16 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Home_Work_7.Pages
 {
     [IgnoreAntiforgeryToken]
     public class BookManagement : PageModel
     {
-        public IActionResult OnGetBook(int id = 0)
+        public IActionResult OnGetBook(string? id = null)
         {
             var sendBook = Books.books.Find(book => book != null && book.id == id);
             if (sendBook != null)
@@ -37,6 +34,8 @@ namespace Home_Work_7.Pages
 
             if (bookData != null)
             {
+                bookData.id = Guid.NewGuid().ToString();
+                Console.WriteLine(bookData.id);
                 Books.books.Add(bookData);
                 var result = new { Status = "Книга добавлена в библиотеку" };
                 return new JsonResult(result);
@@ -56,7 +55,7 @@ namespace Home_Work_7.Pages
 
             if (bookData != null)
             {
-                var index = Books.books.FindIndex(book => book.id == bookData.id);
+                var index = Books.books.FindIndex(book => book?.id == bookData.id);
                 if (index != -1)
                 {
                     Books.books[index] = bookData;
@@ -77,9 +76,13 @@ namespace Home_Work_7.Pages
             }
         }
 
-        public IActionResult OnPostDeleteBook(int id = 0)
+        public IActionResult OnPostDeleteBook(string? id = null)
         {
-            Books.books.RemoveAt(Books.books.FindIndex(book => book.id == id));
+            var index = Books.books.FindIndex(book => book?.id == id);
+            if (index != -1)
+            {
+                Books.books.RemoveAt(index);
+            }
             return RedirectToPage();
         }
     }

@@ -24,6 +24,9 @@ public static class Users
 {
     public static List<User> _users = new()
     {
-        new User("Renzo", "Test", "Test@gmail.com")
+        new User("Renzo", "Test", "Test@gmail.com"),
+        new User("DiSpaCe", "Test", "Test@gmail.com"),
+        new User("TheDarkReaper", "Test", "Test@gmail.com"),
+        new User("PIPEC", "Test", "Test@gmail.com"),
     };
 }

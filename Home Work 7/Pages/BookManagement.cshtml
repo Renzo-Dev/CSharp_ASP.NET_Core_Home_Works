@@ -6,63 +6,64 @@
 @{
     Layout = "_Layout";
 }
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Book Management</title>
-    <link href="css/BookManagement.css" type="text/css" rel="stylesheet"/>
+    <link href="css/BookManagement.css" rel="stylesheet" />
 </head>
 <body>
 <div class="book__table__container">
     <table>
         <thead>
-        <tr>
-            <th>Название</th>
-            <th>Автор</th>
-            <th>Год</th>
-            <th colspan="2">
-                <input type="button" id="bAddNewBook" value="Добавить новую книгу"/>
-            </th>
-        </tr>
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Год</th>
+                <th colspan="2">
+                    <input type="button" id="bAddNewBook" value="Добавить новую книгу" />
+                </th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var t in Books.books)
-        {
-            <tr>
-                <form method="POST">
-                    <td>
-                        <input hidden="hidden" name="id" value="@Convert.ToString(t.id)"/>
-                        <input class="input__title" readonly="readonly" title="@t.Title" name="Title" value="@t.Title"/>
-                    </td>
-                    <td>@t.Author</td>
-                    <td>@Convert.ToString(t.PublicationYear)</td>
-                    <td>
-                        <button class="editB">Изменить</button>
-                    </td>
-                    <td>
-                        <button asp-page-handler="DeleteBook" class="deleteB">Удалить</button>
-                    </td>
-                </form>
-            </tr>
-        }
+            @foreach (var book in Books.books)
+            {
+                <tr>
+                    <form method="POST">
+                        <td>
+                            <input type="hidden" name="id" value="@book.id" />
+                            <input class="input__title" readonly="readonly" title="@book.Title" name="Title" value="@book.Title" />
+                        </td>
+                        <td>@book.Author</td>
+                        <td>@book.PublicationYear.ToString()</td>
+                        <td>
+                            <button class="editB">Изменить</button>
+                        </td>
+                        <td>
+                            <button asp-page-handler="DeleteBook" class="deleteB">Удалить</button>
+                        </td>
+                    </form>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
 <form method="post" class="modal__create__book__form" autocomplete="off">
-    <input id="id" hidden="hidden" name="id" value=""/>
-    <lable for="book__author">Автор</lable>
+    <input id="id" type="hidden" name="id" value="" />
+    <label for="book__author">Автор</label>
     <input id="book__author" name="Author" type="text">
-    <lable for="book__Genre">Стиль</lable>
+    <label for="book__Genre">Стиль</label>
     <input id="book__Genre" name="Genre" type="text">
-    <lable for="book__PublicationYear">Год Издательства</lable>
+    <label for="book__PublicationYear">Год Издательства</label>
     <input id="book__PublicationYear" name="PublicationYear" type="number">
-    <lable for="book__Publisher">Издательство</lable>
+    <label for="book__Publisher">Издательство</label>
     <input id="book__Publisher" name="Publisher" type="text">
-    <lable for="book__title">Название Книги</lable>
+    <label for="book__title">Название Книги</label>
     <input id="book__title" name="Title" type="text">
     <div>
-        <input class="modal_button" type="button" value=""/>
-        <input class="modal_button" type="button" value="Закрыть"/>
+        <input class="modal_button" type="button" value="" />
+        <input class="modal_button" type="button" value="Закрыть" />
     </div>
 </form>
 <script src="scripts/BookManagement.js"></script>

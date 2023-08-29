@@ -2,24 +2,17 @@ namespace Home_Work_7;
 
 public class Book
 {
-    private static int _bookCounter;
-
-    public Book()
-    {
-    }
-
     public Book(string Author, string Genre, int PublicationYear, string Publisher, string Title)
     {
-        id = _bookCounter;
+        id = Guid.NewGuid().ToString();
         this.Author = Author;
         this.Genre = Genre;
         this.PublicationYear = PublicationYear;
         this.Publisher = Publisher;
         this.Title = Title;
-        _bookCounter++;
     }
 
-    public int id { get; set; }
+    public string id { get; set; }
     public string Author { get; set; }
     public string Genre { get; set; }
     public int PublicationYear { get; set; }
