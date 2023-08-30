@@ -15,4 +15,9 @@ public class HomeController : Controller
     {
         return "Hello World";
     }
+
+    public string OsVersion()
+    {
+        return Environment.OSVersion.ToString();
+    }
 }
