@@ -6,5 +6,8 @@ var app = builder.Build();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "osinfo",
+    pattern: "osinfo",
+    defaults: new { controller = "Home", action = "GetOsInfo" });
 app.Run();

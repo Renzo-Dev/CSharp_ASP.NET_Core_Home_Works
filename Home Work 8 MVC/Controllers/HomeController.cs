@@ -10,13 +10,13 @@ public class HomeController : Controller
     // {
     //     return View();
     // }
-    
+
     public string Index()
     {
         return "Hello World";
     }
 
-    public string OsVersion()
+    public string GetOsInfo()
     {
         return Environment.OSVersion.ToString();
     }
