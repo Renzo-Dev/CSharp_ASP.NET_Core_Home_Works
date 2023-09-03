@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content div {
+    color: ghostwhite;
+    width: 1000px;
+    margin-top: 30px;
+    font-family: "Segoe UI", serif;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: ghostwhite;
+    font-size: 30px;
+    font-family: 'Open Sans', serif;
+    font-weight: 500;
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Images/Background/About.jpg');
+    background-size: cover;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Здесь 0.5 - это прозрачность */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shift-1, .shift-3, .shift-5 {
+    animation: shiftAnimation-left 1500ms alternate cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.shift-2, .shift-4 {
+    animation: shiftAnimation-right 1500ms alternate cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes shiftAnimation-left {
+    0% {
+        transform: translateX(-1000px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes shiftAnimation-right {
+    0% {
+        transform: translateX(1000px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

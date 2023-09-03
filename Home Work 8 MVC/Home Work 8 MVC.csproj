@@ -1,19 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Home_Work_8_MVC</RootNamespace>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Home_Work_8_MVC</RootNamespace>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Home\Task2.cshtml" />
-  </ItemGroup>
+    <ItemGroup>
+        <UpToDateCheckInput Remove="Views\Home\Task2.cshtml"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Home\Task2.cshtml" />
-  </ItemGroup>
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Views\Home\Task2.cshtml"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\js\js.js"/>
+    </ItemGroup>
 
+
+    <ItemGroup>
+        <None Include="wwwroot\Images\Background\gallery.jpg"/>
+
+
+    </ItemGroup>
 
 </Project>

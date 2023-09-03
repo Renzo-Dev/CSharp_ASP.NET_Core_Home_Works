@@ -4,15 +4,27 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}");
+    "default",
+    "{controller=Home}/{action=Index}");
 app.MapControllerRoute(
-    name: "Task1",
-    pattern: "Task1",
-    defaults: new { controller = "Home", action = "Task1" });
+    "Task1",
+    "Task1",
+    new { controller = "Home", action = "Task1" });
 app.MapControllerRoute(
-    name: "Task2",
-    pattern: "Task2",
-    defaults: new { controller = "Home", action = "Task2" });
+    "Task2",
+    "Task2",
+    new { controller = "Home", action = "Task2" });
+app.MapControllerRoute(
+    "About",
+    "About",
+    new { controller = "Home", action = "About" });
+app.MapControllerRoute(
+    "News",
+    "News",
+    new { controller = "Home", action = "News" });
+app.MapControllerRoute(
+    "Gallery",
+    "Gallery",
+    new { controller = "Home", action = "Gallery" });
 
 app.Run();

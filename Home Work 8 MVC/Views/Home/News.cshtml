@@ -1,0 +1,27 @@
+@using Home_Work_8_MVC.Model
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter Strike : Global Offensive - News</title>
+    <link rel="stylesheet" href="css/News.css" type="text/css">
+</head>
+<body>
+<div class="background-image">
+    <div class="content">
+        <a href="/Task2">Home</a>
+        @for (var i = 0; i < News._news.Count; i++)
+        {
+            <div class="news__container">
+                <div class="news__date">@News._news[i].date</div>
+                <div class="news__name">@News._news[i].News_Name</div>
+                <div class="news__content">@News._news[i].content</div>
+            </div>
+        }
+    </div>
+</div>
+</body>
+</html>

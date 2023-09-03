@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a:first-child {
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main__container {
+    overflow: auto;
+    background-image: url('../Images/Background/Home.jpg');
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top__bar__panel {
+    display: flex;
+    flex-direction: row;
+}
+
+.top__bar__panel a:not(:last-child) {
+    margin-right: 40px;
+}
+
+.top__bar__panel a:hover {
+    color: white;
+    transform: translateY(15px);
+}
+
+.top__bar__panel a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #8e8e8e;
+    font-size: 30px;
+    font-family: 'Open Sans', serif;
+    font-weight: 500;
+    text-shadow: 0px 10px 6px rgba(0, 0, 0, 3.5);
+    padding: 15px;
+    transform: translateY(0);
+    transition: all 300ms ease-in-out;
+}
