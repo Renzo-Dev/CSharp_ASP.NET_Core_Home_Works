@@ -1,23 +1,23 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Home_Work_8.Controllers;
-
-[Controller]
-public class HomeController : Controller
+namespace Home_Work_8_MVC.Controllers
 {
-    // GET
-    // public IActionResult Index(int id)
-    // {
-    //     return View();
-    // }
-
-    public string Index()
+    public class HomeController : Controller
     {
-        return "Hello World";
-    }
+        public IActionResult Index()
+        {
+            return View("Index");
+        }
 
-    public string GetOsInfo()
-    {
-        return Environment.OSVersion.ToString();
+        public IActionResult Task1()
+        {
+            // return Content(Environment.OSVersion.ToString());
+            return View("Task1");
+        }
+
+        public IActionResult Task2()
+        {
+            return View("Task2");
+        }
     }
 }
