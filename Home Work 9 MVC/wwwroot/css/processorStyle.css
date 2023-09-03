@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body, html {
+    height: fit-content;
+    width: 99vw;
+    scroll-behavior: smooth;
+}
+
+.products__container {
+    margin-left: 200px;
+    width: 70%;
+    height: 80vh;
+}
+
+#sortingSelect {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    margin-right: 15px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #292929;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+}
+
+.show__processor__container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    height: 200px;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.show__processor__container:not(:last-child) {
+    border-bottom: 2px solid #585858;
+}
+
+.processor__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.processor__info a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.processor__info a:hover {
+    color: cornflowerblue;
+}
+
+.processor__info div {
+    font-size: 20px;
+    font-family: Calibri, serif;
+}
+
+.processor__info div:not(:first-child) {
+    margin-top: 10px;
+    color: #cbcbcb;
+}
+
+.processor__info span {
+    margin-left: 10px;
+    color: white;
+}
+
+.filter__panel__container {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 83vh;
+    max-height: 1000px;
+    width: fit-content;
+    max-width: 260px;
+    color: white;
+    border: 1px solid #8d8d8d;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.filter__panel__container ul {
+    list-style: none;
+}
+
+.header {
+    font-family: "Segoe UI", serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 10px 10px;
+    text-align: left;
+}
+
+
+.info__wrapper ul li {
+    font-size: 20px;
+    margin-left: 5px;
+    font-family: Calibri, serif;
+    white-space: nowrap;
+}
+
+
+.info__wrapper ul li span {
+    margin-left: 5px;
+}
+
+.info__wrapper ul {
+    border: 1px solid #585858;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.info__wrapper:nth-child(3) ul {
+    height: 400px;
+    min-height: 350px;
+}
+
+.info__wrapper:nth-child(n+2):nth-child(-n+5) ul {
+    height: 150px;
+    overflow: auto;
+}
+
+.price {
+    margin-left: auto;
+}
+
+.price span:first-child {
+    font-size: 25px;
+    margin-right: 10px;
+    font-family: "Segoe UI", serif;
+}
+
+.price span:nth-child(2) {
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
+}
+
+.price span:last-child {
+    font-size: 20px;
+    font-family: "Segoe UI", serif;
+}
