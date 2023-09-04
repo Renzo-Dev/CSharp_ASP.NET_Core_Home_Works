@@ -1,0 +1,25 @@
+@using Home_Work_10_MVC.Controllers
+@{
+    Layout = "_Layout";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2 style="margin-top: 100px;color: white;font-family: Segoe UI,serif">Сообщения от пользователей для Модератора</h2>
+<ul style="width: 800px;height: 500px;font-family: Segoe UI,serif;font-size: 20px; color: white; border: 1px solid white; padding: 15px;overflow: auto;list-style: none;">
+    <li>Количество сообщений: <span>@Convert.ToString(ModeratorControlls.Messages.Count)</span></li>
+    @foreach (var message in ModeratorControlls.Messages)
+    {
+        <li style="margin-top: 20px">Автор: @message.author</li>
+        <li>Соощение: <span style="color: #8c8c8c">@message.message</span></li>
+    }
+</ul>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@{
+    Layout = "_Layout";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/About.css" type="text/css" rel="stylesheet"/>
+    <title>О нас</title>
+</head>
+<body>
+<div class="cont">
+    <button id="message__for__moderator">Отправить сообщение модератору</button>
+    <header>Добро пожаловать в наш Магазин Комплектующих ПК!</header>
+    <div class="modal-content">
+        <div class="modal__title">Сообщение модератору</div>
+        <textarea class="modal__text" placeholder="Введите текст" type="text"></textarea>
+        <input class="modal__author" placeholder="Введите Имя (NickName)" type="text">
+        <div class="buttons__container">
+            <input class="modal-bth-submit" type="button" value="Отправить">
+            <input class="modal-bth-close" type="button" value="Закрыть">
+        </div>
+    </div>
+    <main>
+        <div>
+            Мы рады приветствовать вас на странице "О нас", где вы узнаете больше о том,кто мы и что делаем.
+            Наш магазин - это ваш надежный партнер в мире высококачественных комплектующих для компьютеров.
+        </div>
+        <h2>Наша Миссия:</h2>
+        <div>
+            Наши основные ценности - это качество, инновации и клиентоориентированный подход.
+            Мы стремимся предоставлять нашим клиентам только лучшие продукты от ведущих производителей
+            в области компьютерных комплектующих. Наша миссия - сделать процесс выбора и приобретения
+            комплектующих для вашего ПК максимально простым, удобным и беззаботным.
+        </div>
+        <h2>Наши Преимущества:</h2>
+        <ul>
+            <li>
+                <b>Большой Ассортимент:</b>
+                <span>
+                    В нашем магазине вы найдете широкий выбор процессоров,
+                    видеокарт, материнских плат, жестких дисков и других комплектующих от ведущих брендов.
+                </span>
+            </li>
+            <li>
+                <b>Экспертное Мнение:</b>
+                <span>
+                    Наши эксперты всегда готовы предоставить вам профессиональные
+                    рекомендации и консультации для выбора оптимальных комплектующих, соответствующих вашим потребностям.
+                </span>
+            </li>
+            <li>
+                <b>Качество и Гарантия:</b>
+                <span>
+                    Мы работаем только с проверенными поставщиками и
+                    гарантируем качество каждого товара. Все продукты сопровождаются гарантией производителя.
+                </span>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        2023&COPY;
+        <a href="/MessagesModerator">Страница модератора</a>
+    </footer>
+</div>
+<script src="scripts/MessageModerator.js"></script>
+</body>
+</html>

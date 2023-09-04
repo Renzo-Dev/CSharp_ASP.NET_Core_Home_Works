@@ -1,0 +1,47 @@
+@using Home_Work_10_MVC.Controllers
+@{
+    Layout = "_Layout";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/ProcessorDetails.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div>
+        @{
+            @Processors.Processor?.Model
+            var tmp = Processors.Processor?.Model;
+            tmp = tmp + ".png";
+        }
+        <img src="/Images/Processors/@tmp" height="300px" width="300px" alt="@Processors.Processor?.Model">
+    </div>
+    <div class="text-info">
+        <div>Модель: <span>@Processors.Processor?.Model</span></div>
+        <div>Производитель: <span>@Processors.Processor?.Manufacturer</span></div>
+        <div>Линейка процессора:<span>@Processors.Processor?._specifications.ProcessorLine</span></div>
+        <div>Архитектура: <span>@Processors.Processor?._specifications.Architecture</span></div>
+    </div>
+    <div class="text-info-details">
+        <div>Сокет: <span>@Processors.Processor?._specifications.Socket.</span></div>
+        <div>Базовая чистота, ГГц: <span>@Processors.Processor?._specifications.ClockFrequency</span></div>
+        <div>Количество ядер:<span>@Processors.Processor?._specifications.NumberCores</span></div>
+        <div>Количество потоков:<span>@Processors.Processor?._specifications.NumberThreads</span></div>
+        <div>
+            Кеш:
+            <span>
+                <div>Кеш 1 lvl: <span>@Processors.Processor?._specifications.cacheMemory.CacheMemory1 МБ</span></div>
+                <div>Кеш 2 lvl: <span>@Processors.Processor?._specifications.cacheMemory.CacheMemory2 МБ</span></div>
+                <div>Кеш 3 lvl: <span>@Processors.Processor?._specifications.cacheMemory.CacheMemory3 МБ</span></div>
+            </span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
