@@ -1,0 +1,51 @@
+.main__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 30px auto 0;
+}
+
+h2 {
+    color: white;
+    font-size: 35px;
+    font-family: "Segoe UI", serif;
+    margin-bottom: 30px;
+}
+
+.main__content > main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > div {
+    color: white;
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+main > ul {
+    font-size: 25px;
+    font-family: "Segoe UI", serif;
+}
+
+main > ul > li {
+    color: white;
+}
+
+.features_container {
+    align-self: flex-start;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: fit-content;
+}
+
+.main_features_title {
+    color: white;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
