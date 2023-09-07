@@ -67,11 +67,12 @@ public class PageInfo : Controller
         PartialPage = "~/Views/Partials/Forma.cshtml";
         return View("~/Views/Pages/PageInfoGen.cshtml");
     }
-    
+
     [HttpPost]
     public IActionResult Forma(string name, string email)
     {
-        ViewBag.Message = $"<script>alert(`Пользователь {name} с адресом {email}\n успешно зарегистрирован!`);</script>";
+        ViewBag.Message =
+            $"<script>alert(`Пользователь {name} с адресом {email}\n успешно зарегистрирован!`);</script>";
         PartialPage = "~/Views/Partials/Forma.cshtml";
         ViewBag.Title = "Forma";
         ViewData["NamePage"] = "Forma";
