@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 6 Razor Page", "H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home Work 7 Razor Page", "Home Work 7 Razor Page\Home Work 7 Razor Page.csproj", "{6671E69D-3D28-4AA3-A353-6F62C4A82EB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 8 MVC", "Home Work 8 MVC\Home Work 8 MVC.csproj", "{167D5847-67E1-4FEF-A0ED-8DF9F4708B2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 9 MVC", "Home Work 9 MVC\Home Work 9 MVC.csproj", "{167D5847-67E1-4FEF-A0ED-8DF9F4708B2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 11 MVC", "Home Work 11 MVC\Home Work 11 MVC.csproj", "{8039AB81-346D-4CC4-BD1D-F13B2BEAE4FB}"
 EndProject
