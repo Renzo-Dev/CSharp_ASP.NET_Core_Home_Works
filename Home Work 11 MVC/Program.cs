@@ -26,5 +26,4 @@ app.MapControllerRoute(
     "MessagesModerator",
     "MessagesModerator",
     new { controller = "ModeratorControlls", action = "MessagesForModerator" });
-
 app.Run();
