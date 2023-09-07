@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="~/css/Forma.css" />
+<h2 >Регистрация</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <script>
+    alert(@ViewBag.Message)
+</script>
+}
+@using (Html.BeginForm("Forma", "PageInfo", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Электронная почта:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрировать</button>
+}

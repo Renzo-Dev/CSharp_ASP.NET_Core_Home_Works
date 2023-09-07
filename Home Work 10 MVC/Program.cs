@@ -28,6 +28,10 @@ app.MapControllerRoute(
     "UnrealEngine",
     "UnrealEngine",
     new { controller = "PageInfo", action = "UnrealEngine" });
+app.MapControllerRoute(
+    "Test",
+    "Forma",
+    new { controller = "PageInfo", action = "Forma" });
 
 
 app.Run();

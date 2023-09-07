@@ -1,0 +1,25 @@
+h2{
+    font-family: "Segoe UI", serif;
+    color: white;
+}
+
+.form-group {
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    font-family: "Segoe UI", serif;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    background-color: #2e2e54;
+    padding: 15px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}

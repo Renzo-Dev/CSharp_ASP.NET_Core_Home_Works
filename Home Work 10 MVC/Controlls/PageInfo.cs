@@ -58,4 +58,23 @@ public class PageInfo : Controller
         PartialPage = "~/Views/Partials/UniversalPage.cshtml";
         return View("~/Views/Pages/PageInfoGen.cshtml");
     }
+
+    [HttpGet]
+    public IActionResult Forma()
+    {
+        ViewBag.Title = "Forma";
+        ViewData["NamePage"] = "Forma";
+        PartialPage = "~/Views/Partials/Forma.cshtml";
+        return View("~/Views/Pages/PageInfoGen.cshtml");
+    }
+    
+    [HttpPost]
+    public IActionResult Forma(string name, string email)
+    {
+        ViewBag.Message = $"<script>alert(`Пользователь {name} с адресом {email}\n успешно зарегистрирован!`);</script>";
+        PartialPage = "~/Views/Partials/Forma.cshtml";
+        ViewBag.Title = "Forma";
+        ViewData["NamePage"] = "Forma";
+        return View("~/Views/Pages/PageInfoGen.cshtml");
+    }
 }
