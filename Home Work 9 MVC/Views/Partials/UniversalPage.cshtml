@@ -1,19 +1,19 @@
 @using Home_Work_9_MVC.Models
 @{
-    var index = PageDataInfo._pageData.FindIndex(data => data.Name == ViewData["NamePage"]);
+    var index = PageDataInfo.PageDataList.FindIndex(data => data.Name == ViewData["NamePage"]);
 }
 
 <link href="css/PageInfo.css" type="text/css" rel="stylesheet"/>
 <div class="main__content">
-    <h2>@PageDataInfo._pageData[index].Name</h2>
+    <h2>@PageDataInfo.PageDataList[index].Name</h2>
     <main>
-        <div>@PageDataInfo._pageData[index].Description</div>
+        <div>@PageDataInfo.PageDataList[index].Description</div>
         <div class="main_features_title">Основные характеристики:</div>
         <div class="features_container">
             <ul>
-                @for (var i = 0; i < PageDataInfo._pageData[index].Features.Count; i++)
+                @for (var i = 0; i < PageDataInfo.PageDataList[index].Features.Count; i++)
                 {
-                    <li>@PageDataInfo._pageData[index].Features[i]</li>
+                    <li>@PageDataInfo.PageDataList[index].Features[i]</li>
                 }
             </ul>
         </div>
