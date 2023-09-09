@@ -1,39 +1,38 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Home_Work_1.Pages
+namespace Home_Work_1.Pages;
+
+public class Task_5Model : PageModel
 {
-    public class Task_5Model : PageModel
+    public string Author { get; set; }
+    public string Citation { get; set; }
+
+    public void OnGet()
     {
-        public string Author { get; set; }
-        public string Citation { get; set; }
+        var citations = new List<Citations>();
+        citations?.Add(new Citations("РђР»СЊР±РµСЂС‚ Р­Р№РЅС€С‚РµР№РЅ", "Р§РµРј СѓРјРЅРµРµ С‡РµР»РѕРІРµРє, С‚РµРј Р»РµРіС‡Рµ РѕРЅ РїСЂРёР·РЅР°РµС‚ СЃРµР±СЏ РґСѓСЂР°РєРѕРј"));
+        citations?.Add(new Citations("РўРµРѕРґРѕСЂ Р СѓР·РІРµР»СЊС‚", "РќРёРєРѕРіРґР° РЅРµ РѕС€РёР±Р°РµС‚СЃСЏ С‚РѕС‚, РєС‚Рѕ РЅРёС‡РµРіРѕ РЅРµ РґРµР»Р°РµС‚"));
+        citations?.Add(new Citations("Р›РµРІ РќРёРєРѕР»Р°РµРІРёС‡ РўРѕР»СЃС‚РѕР№", "РњРµРЅРµРµ РІСЃРµРіРѕ РїСЂРѕСЃС‚С‹ Р»СЋРґРё, Р¶РµР»Р°СЋС‰РёРµ РєР°Р·Р°С‚СЊСЃСЏ РїСЂРѕСЃС‚С‹РјРё"));
+        citations?.Add(new Citations(" РњР°СЂС‚РёРЅ Р›СЋС‚РµСЂ РљРёРЅРі",
+            "Р•СЃР»Рё С‡РµР»РѕРІРµРє РЅРµ РЅР°С€С‘Р», Р·Р° С‡С‚Рѕ РјРѕР¶РµС‚ СѓРјРµСЂРµС‚СЊ, РѕРЅ РЅРµ СЃРїРѕСЃРѕР±РµРЅ Р¶РёС‚СЊ"));
 
-        struct Citations
+        if (Request.Path == "/Task 5")
         {
-            public string Author;
-            public string citation;
-
-            public Citations(string author, string citation)
-            {
-                Author = author;
-                this.citation = citation;
-            }
+            var randomId = new Random().Next(citations.Count);
+            Author = citations[randomId].Author;
+            Citation = citations[randomId].citation;
         }
+    }
 
-        public void OnGet()
+    private struct Citations
+    {
+        public readonly string Author;
+        public readonly string citation;
+
+        public Citations(string author, string citation)
         {
-            List<Citations> citations = new List<Citations>();
-            citations?.Add(new Citations("Альберт Эйнштейн", "Чем умнее человек, тем легче он признает себя дураком"));
-            citations?.Add(new Citations("Теодор Рузвельт", "Никогда не ошибается тот, кто ничего не делает"));
-            citations?.Add(new Citations("Лев Николаевич Толстой", "Менее всего просты люди, желающие казаться простыми"));
-            citations?.Add(new Citations(" Мартин Лютер Кинг", "Если человек не нашёл, за что может умереть, он не способен жить"));
-
-            if (Request.Path == "/Task 5")
-            {
-                int randomId = new Random().Next(citations.Count);
-                Author = citations[randomId].Author;
-                Citation = citations[randomId].citation;
-            }
+            Author = author;
+            this.citation = citation;
         }
     }
 }

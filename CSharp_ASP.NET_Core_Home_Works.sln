@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 11 MVC", "Home Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 10 MVC", "Home Work 10 MVC\Home Work 10 MVC.csproj", "{A1FB7506-48FE-4E42-B813-9E4AF57A4B66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 12", "Home Work 12\Home Work 12.csproj", "{ED85913E-829B-40BA-8E3A-2E4141BD4833}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home Work 12 MVC", "Home Work 12 MVC\Home Work 12 MVC.csproj", "{ED85913E-829B-40BA-8E3A-2E4141BD4833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

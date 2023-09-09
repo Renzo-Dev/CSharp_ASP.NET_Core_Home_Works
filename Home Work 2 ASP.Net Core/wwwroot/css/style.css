@@ -1,9 +1,9 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-body,html {
+body, html {
     height: 100%;
     width: 100%;
     background-color: #160931;
@@ -67,7 +67,7 @@ body,html {
     padding-left: 10px;
 }
 
-.restaurant__list li:hover{
+.restaurant__list li:hover {
     background-color: red;
 }
 

@@ -3,7 +3,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 app.MapControllerRoute(
-    name: "default",
+    "default",
     "{controller=Home}/{action=Index}");
 
 app.Run();

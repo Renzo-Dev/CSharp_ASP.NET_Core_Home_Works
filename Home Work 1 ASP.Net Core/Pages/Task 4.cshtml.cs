@@ -1,32 +1,30 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+namespace Home_Work_1.Pages;
 
-namespace Home_Work_1.Pages
+public class Task_4Model : PageModel
 {
-    public class Task_4Model : PageModel
+    // requires using Microsoft.Extensions.Configuration;
+    private readonly IConfiguration _configuration;
+
+    // –í–û–¢ –¢–£–¢ –ù–ï –†–ê–ë–û–¢–ê–ï–¢ , –ü–ò–®–ï–¢ –ß–¢–û "–ú–µ—Ç–æ–¥ –¥–æ–ª–∂–µ–Ω –≤–æ–∑–≤—Ä–∞—â–∞—Ç—å –∑–Ω–∞—á–µ–Ω–∏–µ"
+    public Task_4Model(IConfiguration configuration)
     {
-        // requires using Microsoft.Extensions.Configuration;
-        private readonly IConfiguration _configuration;
+        _configuration = configuration;
+    }
 
-        // ¬Œ“ “”“ Õ≈ –¿¡Œ“¿≈“ , œ»ÿ≈“ ◊“Œ "ÃÂÚÓ‰ ‰ÓÎÊÂÌ ‚ÓÁ‚‡˘‡Ú¸ ÁÌ‡˜ÂÌËÂ"
-        public Task_4Model(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+    public string? MyName { get; set; }
+    public string? MyTitle { get; set; }
+    public string? MyAge { get; set; }
 
-        public string? MyName { get; set; }
-        public string? MyTitle { get; set; }
-        public string? MyAge { get; set; }
+    public void OnGet()
+    {
+        var name = _configuration["Position:Name"];
+        var title = _configuration["Position:Title"];
+        var age = _configuration["Position:Age"];
 
-        public void OnGet()
-        {
-            var name = _configuration["Position:Name"];
-            var title = _configuration["Position:Title"];
-            var age = _configuration["Position:Age"];
-
-            MyName = $"My Name: {name}";
-            MyTitle = $"Title: {title}";
-            MyAge = $"My YO: {age}";
-        }
+        MyName = $"My Name: {name}";
+        MyTitle = $"Title: {title}";
+        MyAge = $"My YO: {age}";
     }
 }
