@@ -17,4 +17,12 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public IActionResult Create(string name, int age)
+    {
+        ViewBag.Name = name;
+        ViewBag.Age = Convert.ToString(age);
+        return View("Task2");
+    }
 }

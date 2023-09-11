@@ -1,6 +1,6 @@
 @using Home_Work_12_MVC
 @{
-    Layout = null;
+    ViewBag.Title = "Task 1";
     string[] cities = { "Лондон", "Париж", "Берлин" };
     string[] countries = { "Великобритания", "Франция", "Германия" };
     Layout = "_Layout";
@@ -15,5 +15,9 @@
 <body>
 @Html.GetTime()
 @Html.GetOsVersion()
+@Html.GetDayOfWeak()
+@Html.GetUtc()
+@Html.GetUserName()
+@Html.GetUserDomainName()
 </body>
 </html>
