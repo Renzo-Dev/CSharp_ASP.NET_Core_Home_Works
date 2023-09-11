@@ -1,6 +1,27 @@
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Task 2";
     Layout = "_Layout";
+    string? name = ViewBag.Name;
+    string? age = ViewBag.Age;
 }
 
-<h2>title</h2>
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    if (name != null && age != null)
+    {
+        <script>
+        window.alert("Пользователь зарегистрирован")
+        </script>
+    }
+    <p>
+        <label>Имя</label><br/>
+        @Html.TextBox("Name")
+    </p>
+    <p>
+        <label>Возраст</label><br/>
+        @Html.TextBox("Age", "", new { type = "number" })
+    </p>
+    <p>
+        <input type="submit" value="Отправить"/>
+    </p>
+}
