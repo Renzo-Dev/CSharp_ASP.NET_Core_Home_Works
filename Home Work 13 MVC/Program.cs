@@ -4,6 +4,6 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}");
+    "default",
+    "{controller=Home}/{action=Index}");
 app.Run();
