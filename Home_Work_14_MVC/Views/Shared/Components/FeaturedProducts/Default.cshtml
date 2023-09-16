@@ -1,0 +1,9 @@
+@model List<Home_Work_14_MVC.Components.Product>
+
+<h2>Featured Products</h2>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.Name - $@product.Price</li>
+    }
+</ul>

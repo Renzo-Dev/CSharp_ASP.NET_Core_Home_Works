@@ -8,8 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="ViewComponents\" />
-      <Folder Include="wwwroot\" />
+        <Folder Include="Views\Shared\"/>
+        <Folder Include="wwwroot\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Pages\Components\ProductList\Default.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\Components\UserProfile\UserProfileViewComponent.cshtml"/>
     </ItemGroup>
 
 </Project>

@@ -9,7 +9,6 @@ public static class HtmlHelpers
     {
         var result = $"<h2>Текущее время: {DateTime.Now.ToLongTimeString()}</h2>";
         return new HtmlString(result);
-        // доделать 4 хелпера и 1 хелпер форму
     }
 
     public static HtmlString GetOsVersion(this IHtmlHelper html)

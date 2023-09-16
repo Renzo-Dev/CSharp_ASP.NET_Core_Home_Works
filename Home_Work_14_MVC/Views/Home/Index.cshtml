@@ -1,0 +1,21 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body style="font-size: 23px">
+@await Component.InvokeAsync("GetCurrentTime")
+<br/>
+@await Component.InvokeAsync("GetCurrentDate")
+<br/>
+@await Component.InvokeAsync("GetOsVersion")
+<br/>
+@await Component.InvokeAsync("Weather")
+<br>
+@await Component.InvokeAsync("FeaturedProducts")
+</body>
+</html>
