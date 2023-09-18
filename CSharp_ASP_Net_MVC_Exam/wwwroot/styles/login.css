@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Inclusive+Sans&display=swap');
+
+body, html,
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+.background__color {
+    background: #0e0c1c;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form {
+    background: #14112a;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: fit-content;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.login__form > input {
+    color: white;
+    height: 40px;
+    font-size: 17px;
+    background: #1c1e1f;
+    border: 2px solid #786f63;
+    border-radius: 7px;
+    font-family: 'Inclusive Sans', sans-serif;
+
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.login__form > label {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'Inclusive Sans', sans-serif;
+
+    font-weight: 600;
+}
+
+.Error_Message {
+    font-size: 15px;
+    color: red;
+    font-weight: 300;
+    user-select: none;
+    font-family: "Cascadia Mono", serif;
+    margin-left: 30px;
+}
+
+.title_login {
+    font-family: 'Inclusive Sans', sans-serif;
+
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e9055a;
+}
+
+::placeholder {
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.NotHaveAccount {
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Inclusive Sans', sans-serif;
+
+}
+
+#login__button {
+    background: #bc0448;
+    border: none;
+    width: 200px;
+    height: 40px;
+    margin-top: 30px;
+    align-self: center;
+    border-radius: 10px;
+    font-family: 'Inclusive Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#login__button:hover {
+    color: #2c2c33;
+}
+
+#login__button:active {
+    background: #810436;
+}
+
+.NotHaveAccount > a {
+    margin-left: 10px;
+    color: white;
+}
+
+.website_header {
+    top: 50px;
+    position: absolute;
+    font-family: 'Inclusive Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.error_auth {
+    visibility: hidden;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Segoe UI", serif;
+    color: #ee0013;
+}
