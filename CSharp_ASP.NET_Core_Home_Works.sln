@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home_Work_14_MVC", "Home_Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home_Work_13_MVC", "Home_Work_13_MVC\Home_Work_13_MVC.csproj", "{23F04D24-8818-4633-817B-8EF5BC5E860C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_ASP_Net_MVC_Exam", "CSharp_ASP_Net_MVC_Exam\CSharp_ASP_Net_MVC_Exam.csproj", "{5E21B498-352F-41BB-9651-1CA8E937EB78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{23F04D24-8818-4633-817B-8EF5BC5E860C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23F04D24-8818-4633-817B-8EF5BC5E860C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23F04D24-8818-4633-817B-8EF5BC5E860C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E21B498-352F-41BB-9651-1CA8E937EB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E21B498-352F-41BB-9651-1CA8E937EB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E21B498-352F-41BB-9651-1CA8E937EB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E21B498-352F-41BB-9651-1CA8E937EB78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
