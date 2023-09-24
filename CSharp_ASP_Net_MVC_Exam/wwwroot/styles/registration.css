@@ -103,6 +103,14 @@ body, html,
     color: white;
 }
 
+.website_header {
+    top: 50px;
+    position: absolute;
+    font-family: 'Inclusive Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+
 .password-strength {
     border-radius: 15px;
     height: 5px;

@@ -60,10 +60,9 @@ body, html,
 }
 
 .title_login {
-    font-family: 'Inclusive Sans', sans-serif;
-
-    font-size: 30px;
-    font-weight: 400;
+    font-family: "Cascadia Mono", serif;
+    font-size: 35px;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
     color: #e9055a;

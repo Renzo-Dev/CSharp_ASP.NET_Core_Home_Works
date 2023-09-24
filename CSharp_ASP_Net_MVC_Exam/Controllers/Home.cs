@@ -30,6 +30,25 @@ public class Home : Controller
         return View();
     }
 
+    [TypeFilter(typeof(JwtCheking))]
+    [Route("/Registration")]
+    public IActionResult Registration()
+    {
+        ViewData["Title"] = "Registration";
+        return View();
+    }
+    
+    // создаем аккаунт
+    [HttpPost]
+    public IActionResult RegistrationAcc()
+    {
+        // делаем проверку на уникальный логин
+        
+        // добавляем пользователя в БД
+        
+        // создаем JWT токен  -> GenerateJwtToken
+    }
+
     // получаем данные для проверки , есть ли такой аккаунт, и валидны ли данные
     // елси данные валидны, генерируем JWT токен, отправляем его и переадрисовуем на главную страницу
     [HttpGet]
@@ -47,12 +66,11 @@ public class Home : Controller
                 Response.Cookies.Append("AuthorizationJWT", token, new CookieOptions
                 {
                     HttpOnly = true, // защита от XSS атак
-                    Expires = DateTime.UtcNow.AddMonths(1)
+                    Expires = DateTime.UtcNow.AddMonths(1) 
                 });
                 return Ok();
             }
         }
-
         return Unauthorized();
     }
 

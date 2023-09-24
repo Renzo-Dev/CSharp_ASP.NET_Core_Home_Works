@@ -105,9 +105,10 @@ window.addEventListener('load', () => {
         registration_form.querySelector('#error_email').innerHTML = ' ';
     });
 
+    // нажатие на кнопку зарегистрировать
     document.querySelector('#registration__button').addEventListener('click', function () {
         if (validator.GetError().length === 0) {
-            registration_form.submit();
+           
         }
     });
 });

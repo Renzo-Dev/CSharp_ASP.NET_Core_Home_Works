@@ -8,6 +8,8 @@ public class User
         Password = password;
         Guid = System.Guid.NewGuid().ToString();
     }
+    
+    // GUID переделать на ID
 
     public User()
     {
